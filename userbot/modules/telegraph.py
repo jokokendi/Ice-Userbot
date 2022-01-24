@@ -8,6 +8,7 @@
 import os
 from datetime import datetime
 
+import webpage2telegraph
 from PIL import Image
 from telegraph import Telegraph, exceptions, upload_file
 
@@ -20,9 +21,8 @@ r = telegraph.create_account(short_name="telegraph")
 auth_url = r["auth_url"]
 
 
-@man_cmd(pattern="tg (m|t)$")
+@man_cmd(pattern="tg (m|t|u)$")
 async def telegraphs(graph):
-    """For telegraph command, upload media & text to telegraph site."""
     xxnx = await edit_or_reply(graph, "`Processing...`")
     if not graph.text[0].isalpha() and graph.text[0] not in ("/", "#", "@", "!"):
         if graph.fwd_from:
@@ -80,6 +80,19 @@ async def telegraphs(graph):
                     f'**Berhasil diupload ke** [telegra.ph](https://telegra.ph/{response["path"]})',
                     link_preview=True,
                 )
+            elif input_str == "url":
+                input_url = r_message.text
+                telegraph_url = webpage2telegraph.transfer(input_url)
+                if telegraph_url is None:
+                    return await edit_delete(xxnx, "**Gagal Mengupload.**")
+                end = datetime.now()
+                ms = (end - start).seconds
+                await xxnx.edit(
+                    "**Berhasil diupload ke https://{} dalam {} detik.**".format(
+                        telegraph_url, ms
+                    ),
+                    link_preview=True,
+                )
         else:
             await edit_delete(
                 xxnx,
@@ -96,9 +109,11 @@ CMD_HELP.update(
     {
         "telegraph": f"**Plugin : **`telegraph`\
         \n\n  •  **Syntax :** `{cmd}tg` m\
-        \n  •  **Function : **Mengunggah m(Media) Ke Telegraph.\
+        \n  •  **Function : **Mengunggah [m = Media] Ke Telegraph.\
         \n\n  •  **Syntax :** `{cmd}tg` t\
-        \n  •  **Function : **Mengunggah t(Teks) Ke Telegraph.\
+        \n  •  **Function : **Mengunggah [t = Teks] Ke Telegraph.\
+        \n\n  •  **Syntax :** `{cmd}tg` u\
+        \n  •  **Function : **Mengunggah [u = Url] page website Ke Telegraph.\
     "
     }
 )
