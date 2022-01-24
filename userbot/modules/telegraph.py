@@ -6,9 +6,9 @@
 """ Userbot module for Telegraph commands """
 
 import os
-import webpage2telegraph
 from datetime import datetime
 
+import webpage2telegraph
 from PIL import Image
 from telegraph import Telegraph, exceptions, upload_file
 
@@ -87,7 +87,12 @@ async def telegraphs(graph):
                     return await edit_delete(xxnx, "**Gagal Mengupload.**")
                 end = datetime.now()
                 ms = (end - start).seconds
-                await xxnx.edit("**Berhasil diupload ke https://{} dalam {} detik.**".format(telegraph_url, ms), link_preview=True)
+                await xxnx.edit(
+                    "**Berhasil diupload ke https://{} dalam {} detik.**".format(
+                        telegraph_url, ms
+                    ),
+                    link_preview=True,
+                )
         else:
             await edit_delete(
                 xxnx,
