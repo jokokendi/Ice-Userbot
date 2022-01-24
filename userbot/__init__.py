@@ -266,7 +266,6 @@ DEEP_AI = os.environ.get("DEEP_AI", None)
 
 # Inline bot helper
 BOT_TOKEN = os.environ.get("BOT_TOKEN", None)
-BOT_USERNAME = os.environ.get("BOT_USERNAME", None)
 
 
 # Setting Up CloudMail.ru and MEGA.nz extractor binaries,
@@ -412,11 +411,12 @@ with bot:
 
         dugmeler = CMD_HELP
         user = bot.get_me()
+        jembot = tgbot.get_me()
         uid = user.id
         owner = user.first_name
         logo = ALIVE_LOGO
         logoman = INLINE_PIC
-        tgbotusername = BOT_USERNAME
+        BOT_USERNAME = f"@{jembot.username}"
         BTN_URL_REGEX = re.compile(
             r"(\[([^\[]+?)\]\<buttonurl:(?:/{0,2})(.+?)(:same)?\>)"
         )
@@ -556,7 +556,7 @@ with bot:
                     description="Man - UserBot | Telethon",
                     url="https://t.me/SharingUserbot",
                     thumb=InputWebDocument(INLINE_PIC, 0, "image/jpeg", []),
-                    text=f"**Man - UserBot**\n➖➖➖➖➖➖➖➖➖➖\n✣ **UserMode:** [{user.first_name}](tg://user?id={user.id})\n✣ **Assistant:** {tgbotusername}\n➖➖➖➖➖➖➖➖➖➖\n**Support:** @Lunatic0de\n➖➖➖➖➖➖➖➖➖➖",
+                    text=f"**Man - UserBot**\n➖➖➖➖➖➖➖➖➖➖\n✣ **UserMode:** [{user.first_name}](tg://user?id={user.id})\n✣ **Assistant:** {BOT_USERNAME}\n➖➖➖➖➖➖➖➖➖➖\n**Support:** @Lunatic0de\n➖➖➖➖➖➖➖➖➖➖",
                     buttons=[
                         [
                             custom.Button.url("ɢʀᴏᴜᴘ", "https://t.me/SharingUserbot"),
