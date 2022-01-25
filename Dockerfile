@@ -1,11 +1,9 @@
-FROM biansepang/weebproject:buster
+FROM mrismanaziz/man-userbot:buster
 
-RUN git clone -b Ice-Userbot https://github.com/jokokendi/Ice-Userbot /root/userbot
-RUN mkdir /root/userbot/.bin
-RUN pip install --upgrade pip setuptools
-WORKDIR /root/userbot
+RUN git clone -b Ice-Userbot https://github.com/jokokendi/Ice-Userbot /home/manuserbot/ \
+    && chmod 777 /home/manuserbot \
+    && mkdir /home/manuserbot/bin/
 
-#Install python requirements
-RUN pip3 install -r https://raw.githubusercontent.com/jokokendi/Ice-Userbot/Ice-Userbot/requirements.txt
+WORKDIR /home/manuserbot/
 
 CMD [ "bash", "start" ]
