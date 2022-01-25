@@ -186,16 +186,16 @@ ANTI_SPAMBOT_SHOUT = sb(os.environ.get("ANTI_SPAMBOT_SHOUT", "False"))
 ALIVE_TEKS_CUSTOM = os.environ.get("ALIVE_TEKS_CUSTOM", "Hey, I am alive.")
 
 # Default .alive name
-ALIVE_NAME = os.environ.get("ALIVE_NAME", "Man")
+ALIVE_NAME = os.environ.get("ALIVE_NAME", "Ice")
 
 # Custom Emoji Alive
-ALIVE_EMOJI = os.environ.get("ALIVE_EMOJI", "⚡️")
+ALIVE_EMOJI = os.environ.get("ALIVE_EMOJI", "♦️")
 
 # Custom Emoji Alive
-INLINE_EMOJI = os.environ.get("INLINE_EMOJI", "✘")
+INLINE_EMOJI = os.environ.get("INLINE_EMOJI", "✧")
 
 # Custom icon HELP
-ICON_HELP = os.environ.get("ICON_HELP", "❉")
+ICON_HELP = os.environ.get("ICON_HELP", "❁")
 
 # Time & Date - Country and Time Zone
 COUNTRY = str(os.environ.get("COUNTRY", "ID"))
@@ -215,11 +215,11 @@ BOT_VER = os.environ.get("BOT_VER", "2.3.4")
 
 # Default .alive logo
 ALIVE_LOGO = (
-    os.environ.get("ALIVE_LOGO") or "https://telegra.ph/file/9dc4e335feaaf6a214818.jpg"
+    os.environ.get("ALIVE_LOGO") or "https://telegra.ph/file/c575689ba7301e85eb0c5.jpg"
 )
 
 INLINE_PIC = (
-    os.environ.get("INLINE_PIC") or "https://telegra.ph/file/9dc4e335feaaf6a214818.jpg"
+    os.environ.get("INLINE_PIC") or "https://telegra.ph/file/c575689ba7301e85eb0c5.jpg"
 )
 
 # Picture For VCPLUGIN
@@ -507,7 +507,7 @@ with bot:
                     description="Repository Ice - Userbot",
                     url="https://t.me/musikkugroup",
                     thumb=InputWebDocument(INLINE_PIC, 0, "image/jpeg", []),
-                    text="**Man - UserBot**\n➖➖➖➖➖➖➖➖➖➖\n✣ **Owner Repo :** [KEN KAN](https://t.me/escape_aja)\n✣ **Support :** @musikkuchannel\n✣ **Repository :** [Ice-Userbot](https://github.com/jokokendi/Ice-Userbot)\n➖➖➖➖➖➖➖➖➖➖",
+                    text="**Ice - UserBot**\n➖➖➖➖➖➖➖➖➖➖\n✣ **Owner Repo :** [KEN KAN](https://t.me/escape_aja)\n✣ **Support :** @musikkuchannel\n✣ **Repository :** [Ice-Userbot](https://github.com/jokokendi/Ice-Userbot)\n➖➖➖➖➖➖➖➖➖➖",
                     buttons=[
                         [
                             custom.Button.url("ɢʀᴏᴜᴘ", "https://t.me/musikkugroup"),
@@ -553,10 +553,10 @@ with bot:
             else:
                 result = builder.article(
                     title="✗ Ice-Userbot ✗",
-                    description="Man - UserBot | Telethon",
+                    description="Ice - UserBot | Telethon",
                     url="https://t.me/musikkugroup",
                     thumb=InputWebDocument(INLINE_PIC, 0, "image/jpeg", []),
-                    text=f"**Man - UserBot**\n➖➖➖➖➖➖➖➖➖➖\n✣ **UserMode:** [{user.first_name}](tg://user?id={user.id})\n✣ **Assistant:** {tgbotusername}\n➖➖➖➖➖➖➖➖➖➖\n**Support:** @musikkuchannel\n➖➖➖➖➖➖➖➖➖➖",
+                    text=f"**Ice - UserBot**\n➖➖➖➖➖➖➖➖➖➖\n✣ **UserMode:** [{user.first_name}](tg://user?id={user.id})\n✣ **Assistant:** {tgbotusername}\n➖➖➖➖➖➖➖➖➖➖\n**Support:** @musikkuchannel\n➖➖➖➖➖➖➖➖➖➖",
                     buttons=[
                         [
                             custom.Button.url("ɢʀᴏᴜᴘ", "https://t.me/musikkugroup"),
