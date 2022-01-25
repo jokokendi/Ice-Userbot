@@ -1,7 +1,7 @@
 {
   "name": "Ice-Userbot",
   "description": "[Ice-Userbot] userbot Telegram modular yang berjalan pada Python 3.9+",
-  "logo": "https://telegra.ph/file/9dc4e335feaaf6a214818.jpg",
+  "logo": "https://telegra.ph/file/c575689ba7301e85eb0c5.jpg",
   "keywords": ["telegram", "userbot", "Ice-Userbot", "modular", "python"],
   "repository": "https://github.com/jokokendi/Ice-Userbot",
   "stack": "container",
