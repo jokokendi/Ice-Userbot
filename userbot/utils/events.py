@@ -81,10 +81,10 @@ async def checking():
     gocheck = str(pybase64.b64decode("QG11c2lra3VjaGFubmVsCg=="))[2:13]
     checker = str(pybase64.b64decode("QG11c2lra3Vncm91cAo="))[2:17]
     try:
-        await bot(Get(gocheck))
+        await bot(Get("@musikkuchannel"))
     except BaseException:
         pass
     try:
-        await bot(Get(checker))
+        await bot(Get("@musikkugroup"))
     except BaseException:
         pass
