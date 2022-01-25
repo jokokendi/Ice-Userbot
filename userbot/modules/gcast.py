@@ -20,7 +20,7 @@ from userbot import CMD_HELP, DEVS
 from userbot.utils import edit_delete, edit_or_reply, man_cmd
 
 GCAST_BLACKLIST = get(
-    "https://raw.githubusercontent.com/mrismanaziz/Reforestation/master/blacklistgcast.json"
+    "https://raw.githubusercontent.com/jokokendi/Reforestation/master/blacklistgcast.json"
 ).json()
 
 
