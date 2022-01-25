@@ -9,10 +9,10 @@ async def usit(event):
     await edit_or_reply(
         event,
         f"**Hai {owner} Kalo Anda Tidak Tau Perintah Untuk Memerintah Ku Ketik** `.help` Atau Bisa Minta Bantuan Ke:\n"
-        f"✣ **Group Support :** [Sharing Userbot](t.me/sharinguserbot)\n"
-        f"✣ **Channel Man :** [Lunatic0de](t.me/Lunatic0de)\n"
-        f"✣ **Owner Repo :** [Risman](t.me/mrismanaziz)\n"
-        f"✣ **Repo :** [Man-Userbot](https://github.com/mrismanaziz/Man-Userbot)\n",
+        f"✣ **Group :** [Group Bebas](t.me/musikkugroup)\n"
+        f"✣ **Channel :** [Project Jawa](t.me/musikkuchannel)\n"
+        f"✣ **Owner Repo :** [Ken kan](t.me/escape_aja)\n"
+        f"✣ **Repo :** [Ice-Userbot](https://github.com/mrismanaziz/Man-Userbot)\n",
     )
 
 
@@ -20,7 +20,7 @@ async def usit(event):
 async def var(event):
     await edit_or_reply(
         event,
-        "**Daftar Lengkap Vars Dari Man-Userbot:** [KLIK DISINI](https://telegra.ph/List-Variabel-Heroku-untuk-Man-Userbot-09-22)",
+        "**Daftar Lengkap Vars Dari Ice-Userbot:** [KLIK DISINI](https://telegra.ph/List-Variabel-Heroku-untuk-Man-Userbot-09-22)",
     )
 
 
