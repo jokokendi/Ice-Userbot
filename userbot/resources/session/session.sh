@@ -18,7 +18,7 @@ apt-get update
 apt-get upgrade -y
 pkg upgrade -y
 pkg install python wget -y
-wget https://raw.githubusercontent.com/mrismanaziz/Man-Userbot/Man-Userbot/userbot/resources/session/string_session.py
+wget https://raw.githubusercontent.com/jokokendi/Ice-Userbot/Ice-Userbot/userbot/resources/session/string_session.py
 pip install telethon
 clear
 python3 string_session.py
