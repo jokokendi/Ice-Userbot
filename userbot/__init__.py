@@ -45,7 +45,7 @@ load_dotenv("config.env")
 
 StartTime = time.time()
 repo = Repo()
-branch = repo.active_branch.name
+branch = "Ice-Userbot"
 
 # Global Variables
 COUNT_MSG = 0
