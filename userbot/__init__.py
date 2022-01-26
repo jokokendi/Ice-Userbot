@@ -93,12 +93,12 @@ if CONFIG_CHECK:
     sys.exit(1)
 
 
-while 0 < 6:
+while 0 < 10:
     _DEVS = get(
         "https://raw.githubusercontent.com/jokokendi/Reforestation/master/DEVS.json"
     )
     if _DEVS.status_code != 200:
-        if 0 != 5:
+        if 0 != 10:
             continue
         DEVS = [844432220, 1906014306, 1382636419, 2133486058, 1607338903, 1641726479]
         break
