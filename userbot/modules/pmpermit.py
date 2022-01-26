@@ -22,9 +22,9 @@ DEF_UNAPPROVED_MSG = (
     "╔════════════════════╗\n"
     "     ⛑ 𝗔𝗧𝗧𝗘𝗡𝗧𝗜𝗢𝗡 𝗣𝗟𝗘𝗔𝗦𝗘 ⛑\n"
     "╚════════════════════╝\n"
-    "• Saya belum menyetujui anda untuk PM.\n"
-    "• Tunggu sampai saya menyetujui PM anda.\n"
-    "• Jangan Spam Chat atau anda akan otomatis diblokir.\n"
+    "• Saya Belum Menyetujui Anda Untuk PM.\n"
+    "• Tunggu Sampai Saya Menyetujui PM Anda.\n"
+    "• Jangan Spam Chat Atau Anda Akan Otomatis Diblokir.\n"
     "╔════════════════════╗\n"
     "    𝗣𝗲𝘀𝗮𝗻 𝗢𝘁𝗼𝗺𝗮𝘁𝗶𝘀 𝗕𝘆 -𝗨𝘀𝗲𝗿𝗕𝗼𝘁\n"
     "╚════════════════════╝\n"
@@ -83,7 +83,7 @@ async def permitpm(event):
 
             if COUNT_PM[event.chat_id] > PM_LIMIT:
                 await event.respond(
-                    "**Maaf Anda Telah Di Blokir Karna Melakukan Spam Chat**"
+                    "**Maaf Anda Telah Di Blokir Karna Melakukan Spam Ke Room Chat**"
                 )
 
                 try:
@@ -93,7 +93,7 @@ async def permitpm(event):
                     if BOTLOG_CHATID:
                         await event.client.send_message(
                             BOTLOG_CHATID,
-                            "**Terjadi Error Saat Menghitung Private Message, Mohon Restart Bot!**",
+                            "**Terjadi Error Saat Menghitung Private Message, Mohon Untuk Merestart Bot!**",
                         )
                     return LOGS.info("Gagal menghitung PM yang diterima")
 
