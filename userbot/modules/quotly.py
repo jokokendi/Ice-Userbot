@@ -22,7 +22,7 @@ async def _(event):
     reply_message = await event.get_reply_message()
     warna = event.pattern_match.group(1)
     chat = "@QuotLyBot"
-    xx = await edit_or_reply(event, "`Processing...`")
+    xx = await edit_or_reply(event, "`Processing Qoutes...`")
     async with event.client.conversation(chat) as conv:
         try:
             response = conv.wait_event(
