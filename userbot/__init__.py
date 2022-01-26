@@ -155,7 +155,7 @@ GITHUB_ACCESS_TOKEN = os.environ.get("GITHUB_ACCESS_TOKEN", None)
 
 # Custom (forked) repo URL for updater.
 UPSTREAM_REPO_URL = os.environ.get(
-    "UPSTREAM_REPO_URL", "https://github.com/jokokendi/Ice-Userbot/tree/Ice-Userbot"
+    "UPSTREAM_REPO_URL", "https://github.com/jokokendi/Ice-Userbot"
 )
 
 # SQL Database URI
