@@ -45,7 +45,7 @@ async def set_not_afk(event):
             else:
                 shite = await event.client.send_message(
                     event.chat_id,
-                    f"**{owner} Pengangguran sok Sibuk Balik Lagi!**\n**Dari AFK :** `{total_afk_time}` **Yang Lalu**",
+                    f"**{owner} Pengangguran Sok Sibuk Balik Lagi!**\n**Dari AFK :** `{total_afk_time}` **Yang Lalu**",
                     file=pic,
                 )
         except BaseException:
