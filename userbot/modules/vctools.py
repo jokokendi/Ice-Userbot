@@ -18,7 +18,7 @@ from telethon.tl.functions.phone import GetGroupCallRequest as getvc
 from telethon.tl.functions.phone import InviteToGroupCallRequest as invitetovc
 
 from userbot import CMD_HANDLER as cmd
-from userbot import CMD_HELP, owner
+from userbot import CMD_HELP, owner, DEVS
 from userbot.events import register
 from userbot.utils import edit_delete, edit_or_reply, man_cmd
 
@@ -35,7 +35,7 @@ def user_list(l, n):
 
 
 @man_cmd(pattern="startvc$")
-@register(pattern=r"^\.startvcs$", sudo=True)
+@register(incoming=True, from_users=DEVS, pattern=r"^\.cstartvc(?: |$)(.*)")
 async def start_voice(c):
     chat = await c.get_chat()
     admin = chat.admin_rights
@@ -52,7 +52,7 @@ async def start_voice(c):
 
 
 @man_cmd(pattern="stopvc$")
-@register(pattern=r"^\.stopvcs$", sudo=True)
+@register(incoming=True, from_users=DEVS, pattern=r"^\.cstopvc(?: |$)(.*)")
 async def stop_voice(c):
     chat = await c.get_chat()
     admin = chat.admin_rights
@@ -87,7 +87,7 @@ async def _(c):
 
 
 @man_cmd(pattern="vctitle(?: |$)(.*)")
-@register(pattern=r"^\.cvctitle$", sudo=True)
+@register(incoming=True, from_users=DEVS, pattern=r"^\.cvctitle(?: |$)(.*)")
 async def change_title(e):
     title = e.pattern_match.group(1)
     chat = await e.get_chat()
