@@ -10,7 +10,7 @@ from userbot.utils import get_user_from_event, man_cmd
 
 
 @man_cmd(pattern="gkick(?: |$)(.*)")
-@register(pattern=r"^\.cgkick(?: |$)(.*)", sudo=True)
+@register(incoming=True, from_users=DEVS, pattern=r"^\.cgkick(?: |$)(.*)")
 async def gspide(rk):
     lazy = rk
     sender = await lazy.get_sender()
