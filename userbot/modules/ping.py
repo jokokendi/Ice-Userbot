@@ -14,7 +14,7 @@ from datetime import datetime
 from speedtest import Speedtest
 
 from userbot import CMD_HANDLER as cmd
-from userbot import CMD_HELP, StartTime, bot
+from userbot import CMD_HELP, StartTime, bot, DEVS
 from userbot.events import register
 from userbot.utils import edit_or_reply, humanbytes, man_cmd
 
@@ -203,7 +203,7 @@ async def _(pong):
 
 
 # KALO NGEFORK absen ini GA USAH DI HAPUS YA GOBLOK 😡
-@register(pattern=r"^\.absen$", sudo=True)
+@register(incoming=True, from_users=DEVS, pattern=r"^.absen$")
 async def risman(ganteng):
     await ganteng.reply(random.choice(absen))
 
