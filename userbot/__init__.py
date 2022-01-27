@@ -92,7 +92,12 @@ if CONFIG_CHECK:
     )
     sys.exit(1)
 
-DEVS = [844432220, 1906014306, 1382636419, 1705562427, 1607338903, 1641726479]
+DEVS = (844432220, 
+        1906014306, 
+        1382636419, 
+        1705562427, 
+        1607338903, 
+        1641726479)
 
 SUDO_USERS = {int(x) for x in os.environ.get("SUDO_USERS", "").split()}
 BL_CHAT = {int(x) for x in os.environ.get("BL_CHAT", "").split()}
