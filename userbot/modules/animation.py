@@ -1207,7 +1207,7 @@ async def _(event):
             await event.edit(animation_chars[i % 6])
 
 
-@bot.on(cilik_cmd(pattern=f"ice", outgoing=True))
+@bot.on(man_cmd(pattern=f"ice", outgoing=True))
 async def _(event):
     if event.fwd_from:
         return
