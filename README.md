@@ -73,6 +73,10 @@ Gunakan bot ini dengan risiko Anda sendiri, dan gunakan userbot ini dengan bijak
 
 <p align="center"><a href="https://heroku.com/deploy?template=https://github.com/jokokendi/Ice-Userbot"> <img src="https://img.shields.io/badge/BUAT DI-HEROKU-blue?style=plastic&logo=heroku&logoColor=yellow"width="300" height="50" /></a></p>
 
+## BOT HEROKU
+<p align="center"><a href="https://telegram.dog/XTZ_HerokuBot?start=am9rb2tlbmRpL0ljZS1Vc2VyYm90IEljZS1Vc2VyYm90"><img src="https://img.shields.io/badge/BUAT DI -BOT HEROKU-magenta?style=plastic&logo=heroku&logoColor=magenta"width="300" height="50" /></a></p>
+
+
 ## Updates & Support
 
 Follow Channel [@musikkuchannel](https://t.me/musikkuchannel) untuk info Update bot dan Gabung Group [@musikkugroup](https://t.me/musikkugroup) untuk untuk diskusi, pelaporan bug, dan bantuan tentang Man-Userbot.
