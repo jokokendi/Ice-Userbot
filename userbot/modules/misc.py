@@ -123,7 +123,7 @@ async def repo_is_here(event):
         f"      __Thanks For Using me__\n\n"
         f"✣ **Userbot Version :** `{BOT_VER}@{branch}`\n"
         f"✣ **Group Support :** [Group Bebas](t.me/musikkugroup)\n"
-        f"✣ **Channel Man :** [Project Jawa](t.me/musikkuchannel)\n"
+        f"✣ **Channel Project :** [Project Jawa](t.me/musikkuchannel)\n"
         f"✣ **Owner Repo :** [Ken Kan](t.me/escape_aja)\n"
         f"✣ **Repo :** [Ice-Userbot](https://github.com/jokokendi/Ice-Userbot)\n"
     )
