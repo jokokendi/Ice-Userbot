@@ -237,7 +237,7 @@ async def risman(ganteng):
 CMD_HELP.update(
     {
         "ping": f"**Plugin : **`ping`\
-        \n\n  •  **Syntax :** `{cmd}ping` ; `{cmd}lping` ; `{cmd}lping` ; `{cmd}xping` ; `{cmd}kping`\
+        \n\n  •  **Syntax :** `{cmd}ping` ; `{cmd}lping` ; `{cmd}fping` ; `{cmd}xping` ; `{cmd}kping`\
         \n  •  **Function : **Untuk menunjukkan ping userbot.\
         \n\n  •  **Syntax :** `{cmd}pong`\
         \n  •  **Function : **Sama seperti perintah ping\
