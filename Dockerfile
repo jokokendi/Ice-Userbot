@@ -70,4 +70,4 @@ RUN set -ex \
 
 EXPOSE 80 443
 
-CMD ["python3 - m userbot"]
+CMD ["python3","-m","userbot"]
