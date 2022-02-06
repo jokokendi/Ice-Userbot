@@ -56,7 +56,6 @@ pylast
 PyPDF2
 pySmartDL
 python-barcode
-python-dotenv
 pytz
 qrcode
 rarfile
@@ -72,13 +71,14 @@ speedtest-cli
 sqlalchemy-json
 sqlalchemy==1.3.23
 telegraph
-telethon
+telethon==1.24.0
 telethon-session-sqlalchemy
 telethon-tgcrypto
 urbandict
 validators
 vcsi
 wand
+webpage2telegraph
 wget
 wikipedia
 wordcloud
