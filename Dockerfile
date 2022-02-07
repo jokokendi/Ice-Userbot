@@ -1,11 +1,8 @@
-FROM kenkannih/ice-userbot:buster
+FROM mrismanaziz/man-userbot:buster
+RUN git clone -b Ice-Userbot https://github.com/jokokendi/Ice-Userbot /home/manuserbot/ \
+    && chmod 777 /home/manuserbot \
+    && mkdir /home/manuserbot/bin/
 
-RUN git clone -b Ice-Userbot https://github.com/CoeF/Ice-Userbot /home/iceuserbot/ \
-    && chmod 777 /home/iceuserbot \
-    && mkdir /home/iceuserbot/bin/
+WORKDIR /home/manuserbot/
 
-COPY ./sample_config.env ./config.env* /home/iceuserbot/
-
-WORKDIR /home/iceuserbot/
-
-CMD [ "python3", "-m", "userbot" ]
+CMD [ "bash", "start" ]
