@@ -1,4 +1,3 @@
-FROM kenkannih/ice-userbot:slim-buster
-
+FROM kenkannih/ice-userbot:buster
 
 CMD [ "bash", "start" ]
