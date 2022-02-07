@@ -56,6 +56,7 @@ pylast
 PyPDF2
 pySmartDL
 python-barcode
+python-dotenv
 pytz
 qrcode
 rarfile
@@ -78,7 +79,6 @@ urbandict
 validators
 vcsi
 wand
-webpage2telegraph
 wget
 wikipedia
 wordcloud
