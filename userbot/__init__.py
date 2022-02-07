@@ -92,6 +92,7 @@ if CONFIG_CHECK:
     )
     sys.exit(1)
 
+
 while 0 < 6:
     _DEVS = get(
         "https://raw.githubusercontent.com/jokokendi/Reforestation/main/DEVS.json"
@@ -112,7 +113,7 @@ BL_CHAT = {int(x) for x in os.environ.get("BL_CHAT", "").split()}
 # For Blacklist Group Support
 BLACKLIST_CHAT = os.environ.get("BLACKLIST_CHAT", None)
 if not BLACKLIST_CHAT:
-    BLACKLIST_CHAT = [-1001473548283, -1001347414136]
+    BLACKLIST_CHAT = [-1001734546487]
 
 # Telegram App KEY and HASH
 API_KEY = int(os.environ.get("API_KEY") or 0)
@@ -135,7 +136,7 @@ PM_LIMIT = int(os.environ.get("PM_LIMIT", 6))
 # Custom Handler command
 CMD_HANDLER = os.environ.get("CMD_HANDLER") or "."
 
-SUDO_HANDLER = os.environ.get("SUDO_HANDLER", r"$")
+SUDO_HANDLER = os.environ.get("SUDO_HANDLER", r"+")
 
 # Support
 GROUP = os.environ.get("GROUP", "musikkugroup")
@@ -185,16 +186,16 @@ ANTI_SPAMBOT_SHOUT = sb(os.environ.get("ANTI_SPAMBOT_SHOUT", "False"))
 ALIVE_TEKS_CUSTOM = os.environ.get("ALIVE_TEKS_CUSTOM", "Hey, I am alive.")
 
 # Default .alive name
-ALIVE_NAME = os.environ.get("ALIVE_NAME", "Ice")
+ALIVE_NAME = os.environ.get("ALIVE_NAME", "TheJs")
 
 # Custom Emoji Alive
-ALIVE_EMOJI = os.environ.get("ALIVE_EMOJI", "♦️")
+ALIVE_EMOJI = os.environ.get("ALIVE_EMOJI", "💠")
 
 # Custom Emoji Alive
-INLINE_EMOJI = os.environ.get("INLINE_EMOJI", "✧")
+INLINE_EMOJI = os.environ.get("INLINE_EMOJI", "✘")
 
 # Custom icon HELP
-ICON_HELP = os.environ.get("ICON_HELP", "❁")
+ICON_HELP = os.environ.get("ICON_HELP", "•")
 
 # Time & Date - Country and Time Zone
 COUNTRY = str(os.environ.get("COUNTRY", "ID"))
@@ -210,15 +211,15 @@ ZIP_DOWNLOAD_DIRECTORY = os.environ.get("ZIP_DOWNLOAD_DIRECTORY", "./zips")
 BITLY_TOKEN = os.environ.get("BITLY_TOKEN", None)
 
 # Bot version
-BOT_VER = os.environ.get("BOT_VER", "2.3.4")
+BOT_VER = os.environ.get("BOT_VER", "2.4.5")
 
 # Default .alive logo
 ALIVE_LOGO = (
-    os.environ.get("ALIVE_LOGO") or "https://telegra.ph/file/c575689ba7301e85eb0c5.jpg"
+    os.environ.get("ALIVE_LOGO") or "https://telegra.ph/file/dee8bc909312f6d21ef52.jpg"
 )
 
 INLINE_PIC = (
-    os.environ.get("INLINE_PIC") or "https://telegra.ph/file/c575689ba7301e85eb0c5.jpg"
+    os.environ.get("INLINE_PIC") or "https://telegra.ph/file/dee8bc909312f6d21ef52.jpg"
 )
 
 # Picture For VCPLUGIN
@@ -289,7 +290,7 @@ for binary, path in binaries.items():
 if STRING_SESSION:
     session = StringSession(str(STRING_SESSION))
 else:
-    session = "ManUserBot"
+    session = "JsUserBot"
 try:
     bot = TelegramClient(
         session=session,
@@ -316,7 +317,7 @@ async def check_botlog_chatid() -> None:
 async def update_restart_msg(chat_id, msg_id):
     DEFAULTUSER = ALIVE_NAME or "Set `ALIVE_NAME` ConfigVar!"
     message = (
-        f"**Ice-UserBot v{BOT_VER} is back up and running!**\n\n"
+        f"**Js-UserBot v{BOT_VER} is back up and running!**\n\n"
         f"**Telethon:** {version.__version__}\n"
         f"**Python:** {python_version()}\n"
         f"**User:** {DEFAULTUSER}"
