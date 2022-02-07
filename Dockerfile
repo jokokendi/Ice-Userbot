@@ -1,6 +1,8 @@
-FROM kenkannih/ice-userbot:buster-v2
+FROM kenkannih/ice-userbot:buster
 
-RUN bash home/repo
+RUN git clone -b Ice-Userbot https://github.com/CoeF/Ice-Userbot /home/iceuserbot/ \
+    && chmod 777 /home/iceuserbot \
+    && mkdir /home/iceuserbot/bin/
 
 WORKDIR /home/iceuserbot/
 
