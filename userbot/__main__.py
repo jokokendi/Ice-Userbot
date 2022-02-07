@@ -10,16 +10,17 @@
 #
 """ Userbot start point """
 
+from ast import Pass
 import sys
 from importlib import import_module
 
 import requests
 from pytgcalls import idle
-from telethon.tl.functions.channels import InviteToChannelRequest
+from telethon.tl.functions.channels import InviteToChannelRequest, JoinChannelRequest
 
 from userbot import BOT_TOKEN, BOT_USERNAME, BOT_VER, BOTLOG_CHATID
 from userbot import CMD_HANDLER as cmd
-from userbot import DEVS, LOGS, bot, branch, call_py
+from userbot import LOGS, bot, branch, call_py
 from userbot.modules import ALL_MODULES
 from userbot.utils import autobot, checking
 
@@ -32,12 +33,7 @@ try:
     ).json()
     if user.id in blacklistman:
         LOGS.warning(
-            "MAKANYA GA USAH BERTINGKAH GOBLOK, USERBOTNYA GUA MATIIN NAJIS BANGET DIPAKE JAMET KEK LU.\nCredits: @mrismanaziz\nClone: @escape_aja"
-        )
-        sys.exit(1)
-    if 1607338903 not in DEVS:
-        LOGS.warning(
-            f"EOL\nIce-UserBot v{BOT_VER}, Copyright © 2021-2022 KEN KAN• <https://github.com/jokokendi>"
+            "MAKANYA GA USAH BERTINGKAH GOBLOK, USERBOTnya GUA MATIIN NAJIS BANGET DIPAKE JAMET KEK LU.\nCredits: @mrismanaziz \nClone: @escape_aja"
         )
         sys.exit(1)
 except Exception as e:
@@ -59,14 +55,14 @@ async def man_userbot_on():
         if BOTLOG_CHATID != 0:
             await bot.send_message(
                 BOTLOG_CHATID,
-                f"❄️ **Ice-Userbot Berhasil Di Aktifkan**\n━━\n➠ **Userbot Version -** `{BOT_VER}@{branch}`\n➠ **Ketik** `{cmd}alive` **Untuk Mengecek Bot**\n━━",
+                f"🔥 **Ice-Userbot Berhasil Di Aktifkan**\n━━\n➠ **Userbot Version -** `{BOT_VER}@{branch}`\n➠ **Ketik** `{cmd}alive` **untuk Mengecheck Bot**\n━━\n\nTerimakasih sudah mengunakan Js-Ubot\nSemoga Harimu Menyenangkan^_^",
             )
     except Exception as e:
         LOGS.info(str(e))
     try:
         await bot(InviteToChannelRequest(int(BOTLOG_CHATID), [BOT_USERNAME]))
     except BaseException:
-        pass
+        Pass
 
 
 bot.loop.run_until_complete(checking())
