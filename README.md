@@ -92,7 +92,7 @@ Follow Channel [@musikkuchannel](https://t.me/musikkuchannel) untuk info Update 
 -  [Koala](https://github.com/ManusiaRakitan/Kampang-Bot) : Kampang-Bot
 -  [Alvin](https://github.com/Zora24/Lord-Userbot) : Lord-Userbot
 -  [Skyzo](https://github.com/ridho17-ind) : Kang Ui
-
+-  [Alfa](https://github.com/CoeF) : Kang Fix
 ## © Credits
 -  [Laky-64](https://github.com/Laky-64) for [Py-Tgcalls](https://github.com/pytgcalls/pytgcalls)
 -  [Lonami](https://github.com/LonamiWebs/) for [Telethon](https://github.com/LonamiWebs/Telethon)
