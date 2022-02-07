@@ -201,11 +201,11 @@ BOT_VER = os.environ.get("BOT_VER", "2.3.4")
 
 # Default .alive logo
 ALIVE_LOGO = (
-    os.environ.get("ALIVE_LOGO") or "https://telegra.ph/file/c575689ba7301e85eb0c5.jpg"
+    os.environ.get("ALIVE_LOGO") or "https://telegra.ph/file/fca7e01dbc9e505132bcd.jpg"
 )
 
 INLINE_PIC = (
-    os.environ.get("INLINE_PIC") or "https://telegra.ph/file/c575689ba7301e85eb0c5.jpg"
+    os.environ.get("INLINE_PIC") or "https://telegra.ph/file/fca7e01dbc9e505132bcd.jpg"
 )
 
 # Picture For VCPLUGIN
