@@ -1,4 +1,4 @@
-FROM kenkannih/ice-userbot:buster
+FROM kenkannih/ice-userbot:buster-v2
 
 RUN bash home/repo
 
