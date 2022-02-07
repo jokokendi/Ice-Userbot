@@ -1,3 +1,3 @@
 FROM kenkannih/ice-userbot:slim-buster
 
-CMD [ "bash", "start" ]
+CMD [ "python3", "-m", "userbot" ]
