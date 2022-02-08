@@ -4,9 +4,9 @@
 
 [![Open Source Love](https://badges.frapsoft.com/os/v2/open-source.png?v=103)](https://github.com/jokokendi/Ice-Userbot)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-Yes-green)](https://GitHub.com/jokokendi/Ice-Userbot/graphs/commit-activity)
-[![CodeFactor](https://www.codefactor.io/repository/github/mrismanaziz/Man-Userbot/badge)](https://www.codefactor.io/repository/github/mrismanaziz/Man-Userbot)
+[![CodeFactor](https://www.codefactor.io/repository/github/jokokendi/Ice-Userbot/badge)](https://www.codefactor.io/repository/github/jokokendi/Ice-Userbot)
 [![CodeQuality](https://img.shields.io/codacy/grade/a723cb464d5a4d25be3152b5d71de82d?color=blue&logo=codacy)](https://app.codacy.com/gh/jokokendi/Ice-Userbot/dashboard)
-[![Docker Pulls](https://img.shields.io/docker/pulls/mrismanaziz/man-userbot)](https://hub.docker.com/r/mrismanaziz/man-userbot/tags)
+[![Docker Pulls](https://img.shields.io/docker/pulls/kenkannih/ice-userbot)](https://hub.docker.com/r/mrismanaziz/man-userbot/tags)
 [![GitHub Forks](https://img.shields.io/github/forks/jokokendi/Ice-Userbot?&logo=github)](https://github.com/jokokendi/Ice-Userbot/fork)
 [![GitHub Stars](https://img.shields.io/github/stars/jokokendi/Ice-Userbot?&logo=github)](https://github.com/jokokendi/Ice-Userbot/stargazers) 
 
