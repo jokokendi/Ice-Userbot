@@ -1,4 +1,7 @@
 # Ice-Userbot Telegram
+
+<p align="center"><a href="https://github.com/jokokendi/Ice-Userbot"> <img src="userbot/resources/logo.jpg"/></a></p>
+
 [![Open Source Love](https://badges.frapsoft.com/os/v2/open-source.png?v=103)](https://github.com/jokokendi/Ice-Userbot)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-Yes-green)](https://GitHub.com/jokokendi/Ice-Userbot/graphs/commit-activity)
 [![CodeFactor](https://www.codefactor.io/repository/github/mrismanaziz/Man-Userbot/badge)](https://www.codefactor.io/repository/github/mrismanaziz/Man-Userbot)
