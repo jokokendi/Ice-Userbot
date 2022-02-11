@@ -123,7 +123,7 @@ async def update(xx, repo, ups_rem, ac_br):
 
 
 @man_cmd(pattern="update( now| deploy|$)")
-@register(incoming=True, from_users=DEVS, pattern=".cupdate( now| deploy|$)")
+@register(incoming=True, from_users=DEVS, pattern==r"^\.cupdate( now| deploy|$)")
 async def upstream(event):
     "For .update command, check if the bot is up to date, update if specified"
     xx = await edit_or_reply(event, "`Mengecek Pembaruan, Tunggu Sebentar...`")
