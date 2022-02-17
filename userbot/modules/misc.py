@@ -125,7 +125,7 @@ async def repo_is_here(event):
         f"✣ **Group Support :** [ᗰᑌᔑᏆᏦ Ꮶᑌ]​(t.me/musikkugroup)\n"
         f"✣ **Channel Project :** [𝙋𝙧𝙤𝙟𝙚𝙘𝙩 𝙅𝙖𝙬𝙖](t.me/musikkuchannel)\n"
         f"✣ **Owner Repo :** [Kᴇɴ Kᴀɴ](t.me/escape_aja)\n"
-        f"✣ **Repo :** [Iᴄᴇ-Usᴇʀʙᴏᴛ](https://github.com/jokokendi/Ice-Userbot)\n"
+        f"✣ **Repo :** [Iᴄᴇ-Usᴇʀʙᴏᴛ](https://github.com/jokokendi/Ice-Userbot)"
     )
 
 
