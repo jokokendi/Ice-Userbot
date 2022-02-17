@@ -88,8 +88,9 @@ async def gben(userbot):
                     r"\\**#GBanned_User**//"
                     f"\n\n**First Name:** [{user.first_name}](tg://user?id={user.id})\n"
                     f"**User ID:** `{user.id}`\n"
-                    f"**Action:** `Global Banned`"
-                )
+                    f"**Action:** `Global Banned`\n"
+                    f"**Powered by:** `❄️ Iᴄᴇ-Usᴇʀʙᴏᴛ`"
+                ) 
             except BaseException:
                 b += 1
     else:
@@ -106,7 +107,8 @@ async def gben(userbot):
         r"\\**#GBanned_User**//"
         f"\n\n**First Name:** [{user.first_name}](tg://user?id={user.id})\n"
         f"**User ID:** `{user.id}`\n"
-        f"**Action:** `Global Banned by {owner}`"
+        f"**Action:** `Global Banned by {owner}`\n"
+        f"**Powered by:** `❄️ Iᴄᴇ-Usᴇʀʙᴏᴛ`"
     )
 
 
@@ -170,4 +172,5 @@ async def gunben(userbot):
         f"\n\n**First Name:** [{user.first_name}](tg://user?id={user.id})\n"
         f"**User ID:** `{user.id}`\n"
         f"**Action:** `UnGBanned by {owner}`"
+        f"**Powered by:** `❄️ Iᴄᴇ-Usᴇʀʙᴏᴛ`"
     )
