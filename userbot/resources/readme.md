@@ -1,2 +1,2 @@
 # Extra Resources for Man-Userbot
-Repository [Man-Userbot](https://github.com/mrismanaziz/Man-Userbot)
+Repository [Ice-Userbot](https://github.com/jokokendi/Ice-Userbot)
