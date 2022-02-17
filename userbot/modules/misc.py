@@ -119,13 +119,13 @@ async def repeat(event):
 async def repo_is_here(event):
     xx = await edit_or_reply(event, "`Processing...`")
     await xx.edit(
-        f"**Hey**, __I am using__ 🔥 **Ice-Userbot** 🔥\n\n"
+        f"**Hey**, __I am using__ ❄️ **Iᴄᴇ-Usᴇʀʙᴏᴛ** ❄️\n\n"
         f"      __Thanks For Using me__\n\n"
         f"✣ **Userbot Version :** `{BOT_VER}@{branch}`\n"
-        f"✣ **Group Support :** [Group Bebas](t.me/musikkugroup)\n"
-        f"✣ **Channel Project :** [Project Jawa](t.me/musikkuchannel)\n"
-        f"✣ **Owner Repo :** [Ken Kan](t.me/escape_aja)\n"
-        f"✣ **Repo :** [Ice-Userbot](https://github.com/jokokendi/Ice-Userbot)\n"
+        f"✣ **Group Support :** [ᗰᑌᔑᏆᏦ Ꮶᑌ ᔑᑌᑭᑭᝪᖇᎢ​(t.me/musikkugroup)\n"
+        f"✣ **Channel Project :** [𝙋𝙧𝙤𝙟𝙚𝙘𝙩 𝙅𝙖𝙬𝙖](t.me/musikkuchannel)\n"
+        f"✣ **Owner Repo :** [Kᴇɴ Kᴀɴ](t.me/escape_aja)\n"
+        f"✣ **Repo :** [Iᴄᴇ-Usᴇʀʙᴏᴛ](https://github.com/jokokendi/Ice-Userbot)\n"
     )
 
 

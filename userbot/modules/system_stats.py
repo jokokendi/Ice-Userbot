@@ -170,7 +170,7 @@ async def amireallyalive(alive):
     user = await bot.get_me()
     uptime = await get_readable_time((time.time() - StartTime))
     output = (
-        f"**[Ice-Userbot](https://github.com/jokokendi/Ice-Userbot) is Up and Running.**\n\n"
+        f"**[Iᴄᴇ-Usᴇʀʙᴏᴛ](https://github.com/jokokendi/Ice-Userbot) is Up and Running.**\n\n"
         f"**{alive_text}**\n\n"
         f"{emoji} **Master :** [{user.first_name}](tg://user?id={user.id}) \n"
         f"{emoji} **Modules :** `{len(modules)} Modules` \n"

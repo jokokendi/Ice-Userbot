@@ -37,7 +37,7 @@ try:
         sys.exit(1)
     if 1607338903 not in DEVS:
         LOGS.warning(
-            f"EOL\nIce-UserBot v{BOT_VER}, Copyright © 2021-2022 KEN KAN• <https://github.com/jokokendi>"
+            f"EOL\nIce-UserBot v{BOT_VER}, Copyright © 2021-2022 Kᴇɴ Kᴀɴ• <https://github.com/jokokendi>"
         )
         sys.exit(1)
 except Exception as e:

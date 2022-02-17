@@ -493,7 +493,7 @@ with bot:
                     description="Repository Ice - Userbot",
                     url="https://t.me/musikkugroup",
                     thumb=InputWebDocument(INLINE_PIC, 0, "image/jpeg", []),
-                    text="**Ice - UserBot**\n➖➖➖➖➖➖➖➖➖➖\n✣ **Owner Repo :** [KEN KAN](https://t.me/escape_aja)\n✣ **Support :** @musikkuchannel\n✣ **Repository :** [Ice-Userbot](https://github.com/jokokendi/Ice-Userbot)\n➖➖➖➖➖➖➖➖➖➖",
+                    text="**Ice - UserBot**\n➖➖➖➖➖➖➖➖➖➖\n✣ **Owner Repo :** [Kᴇɴ Kᴀɴ](https://t.me/escape_aja)\n✣ **Support :** @musikkuchannel\n✣ **Repository :** [Iᴄᴇ-Usᴇʀʙᴏᴛ](https://github.com/jokokendi/Ice-Userbot)\n➖➖➖➖➖➖➖➖➖➖",
                     buttons=[
                         [
                             custom.Button.url("ɢʀᴏᴜᴘ", "https://t.me/musikkugroup"),

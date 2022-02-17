@@ -632,7 +632,7 @@ async def bot_start(event):
                         \n\n**Saya adalah {my_first}** \
                         \n**Anda dapat menghubungi [{OWNER}](tg://user?id={OWNER_ID}) dari sini.**\
                         \n**Jangan melakukan spam atau anda akan di Banned**\
-                        \n\n**Powered by** [Ice-UserBot](https://github.com/jokokendi/Ice-Userbot)"
+                        \n\n**Powered by** [Iᴄᴇ-Usᴇʀʙᴏᴛ](https://github.com/jokokendi/Ice-Userbot)"
         buttons = [
             (
                 Button.url("ɢʀᴏᴜᴘ", f"https://t.me/{GROUP}"),
