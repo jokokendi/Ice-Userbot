@@ -12,7 +12,7 @@ async def usit(event):
         f"✣ **Group :** [Group Bebas](t.me/musikkugroup)\n"
         f"✣ **Channel :** [Project Jawa](t.me/musikkuchannel)\n"
         f"✣ **Owner Repo :** [Ken kan](t.me/escape_aja)\n"
-        f"✣ **Repo :** [Ice-Userbot](https://github.com/mrismanaziz/Man-Userbot)\n",
+        f"✣ **Repo :** [Ice-Userbot](https://github.com/jokokendi/Ice-Userbot)\n",
     )
 
 
@@ -28,13 +28,13 @@ CMD_HELP.update(
     {
         "helper": f"**Plugin : **`helper`\
         \n\n  •  **Syntax :** `{cmd}ihelp`\
-        \n  •  **Function : **Bantuan Untuk Man-Userbot.\
+        \n  •  **Function : **Bantuan Untuk Ice-Userbot.\
         \n\n  •  **Syntax :** `{cmd}listvar`\
         \n  •  **Function : **Melihat Daftar Vars.\
         \n\n  •  **Syntax :** `{cmd}repo`\
-        \n  •  **Function : **Melihat Repository Man-Userbot.\
+        \n  •  **Function : **Melihat Repository Ice-Userbot.\
         \n\n  •  **Syntax :** `{cmd}string`\
-        \n  •  **Function : **Link untuk mengambil String Man-Userbot.\
+        \n  •  **Function : **Link untuk mengambil String Ice-Userbot.\
     "
     }
 )
