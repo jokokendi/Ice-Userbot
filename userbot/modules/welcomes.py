@@ -70,7 +70,7 @@ async def welcome_to_chat(event):
                     )
                     file_media = msg_o.media
                     current_saved_welcome_message = msg_o.message
-             elif cws and cws.reply:
+            elif cws and cws.reply:
                     current_saved_welcome_message = cws.reply
             current_message = await event.reply(
                 current_saved_welcome_message.format(
