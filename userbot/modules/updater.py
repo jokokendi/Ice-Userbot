@@ -71,6 +71,11 @@ async def deploy(xx, repo, ups_rem, ac_br, txt):
             pass
         ups_rem.fetch(ac_br)
         repo.git.reset("--hard", "FETCH_HEAD")
+        repo.config_writer().set_value("user", "name", "jokokendi").release()
+        repo.config_writer().set_value(
+            "user", "email", "ajual7832@gmail.com"
+        ).release()
+        repo.git.commit("--amend", "--no-edit")
         heroku_git_url = heroku_app.git_url.replace(
             "https://", "https://api:" + HEROKU_API_KEY + "@"
         )
@@ -80,7 +85,7 @@ async def deploy(xx, repo, ups_rem, ac_br, txt):
         else:
             remote = repo.create_remote("heroku", heroku_git_url)
         try:
-            remote.push(refspec=f"HEAD:refs/heads/{ac_br}", force=True)
+            remote.push(refspec="HEAD:refs/heads/master", force=True)
         except Exception as error:
             await edit_or_reply(xx, f"{txt}\n**Terjadi Kesalahan Di Log:**\n`{error}`")
             return repo.__del__()
@@ -90,7 +95,7 @@ async def deploy(xx, repo, ups_rem, ac_br, txt):
                 xx, "**Build Gagal!** Dibatalkan karena ada beberapa error.`"
             )
         await edit_or_reply(
-            xx, "`Ice-Userbot Berhasil Di Deploy! Userbot bisa di gunakan kembali.`"
+            xx, "`❄️ Ice-Userbot Berhasil Di upgrade! Userbot bisa di gunakan kembali.`"
         )
 
     else:
@@ -105,7 +110,7 @@ async def update(xx, repo, ups_rem, ac_br):
     except GitCommandError:
         repo.git.reset("--hard", "FETCH_HEAD")
     await edit_or_reply(
-        xx, "`Ice-Userbot Berhasil Diupdate! Userbot bisa di Gunakan Lagi.`"
+        xx, "`❄️ Ice-Userbot Berhasil Diupdate! Userbot bisa di Gunakan Lagi.`"
     )
 
     try:
@@ -142,7 +147,7 @@ async def upstream(event):
         if conf is None:
             return await xx.edit(
                 f"**Sayangnya, Directory {error} Tampaknya Bukan Dari Repo."
-                f"\nTapi Kita Bisa Memperbarui Paksa Userbot Menggunakan** `{cmd}update deploy`"
+                "\nTapi Kita Bisa Memperbarui Paksa Userbot Menggunakan** `.update deploy`"
             )
         repo = Repo.init()
         origin = repo.create_remote("upstream", off_repo)
@@ -168,14 +173,14 @@ async def upstream(event):
         return
 
     if changelog == "" and not force_update:
-        await edit_delete(xx, "**✥ Ice-Userbot Sudah Versi Terbaru**")
+        await edit_delete(xx, "**❄️ Ice-Userbot Sudah Versi Terbaru**")
         return repo.__del__()
 
     if conf == "" and not force_update:
         await print_changelogs(xx, ac_br, changelog)
         await xx.delete()
         return await event.respond(
-            f"**Ketik** `{cmd}update deploy` **untuk Mengupdate Userbot.**"
+            "**Ketik** `.update deploy` **untuk Mengupdate Userbot.**"
         )
 
     if force_update:
@@ -190,13 +195,12 @@ async def upstream(event):
             ):
                 return await xx.edit(
                     "**Quick update telah dinonaktifkan untuk pembaruan ini; "
-                    f"Gunakan** `{cmd}update deploy` **sebagai gantinya.**"
+                    "Gunakan** `.update deploy` **sebagai gantinya.**"
                 )
         await xx.edit("**Perfoming a quick update, please wait...**")
         await update(xx, repo, ups_rem, ac_br)
 
     return
-
 
 CMD_HELP.update(
     {
