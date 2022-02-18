@@ -64,14 +64,13 @@ async def welcome_to_chat(event):
             my_username = f"@{me.username}" if me.username else my_mention
             file_media = None
             current_saved_welcome_message = None
-            if cws:
-                if cws.f_mesg_id:
+            if cws and cws.f_mesg_id:
                     msg_o = await event.client.get_messages(
                         entity=BOTLOG_CHATID, ids=int(cws.f_mesg_id)
                     )
                     file_media = msg_o.media
                     current_saved_welcome_message = msg_o.message
-                elif cws.reply:
+             elif cws and cws.reply:
                     current_saved_welcome_message = cws.reply
             current_message = await event.reply(
                 current_saved_welcome_message.format(

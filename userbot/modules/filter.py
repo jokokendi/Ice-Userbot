@@ -31,13 +31,12 @@ async def filter_incoming_handler(handler):
             for trigger in filters:
                 pattern = r"( |^|[^\w])" + escape(trigger.keyword) + r"( |$|[^\w])"
                 pro = search(pattern, name, flags=IGNORECASE)
-                if pro:
-                    if trigger.f_mesg_id:
+                if pro and trigger.f_mesg_id:
                         msg_o = await handler.client.get_messages(
                             entity=BOTLOG_CHATID, ids=int(trigger.f_mesg_id)
                         )
                         await handler.reply(msg_o.message, file=msg_o.media)
-                    elif trigger.reply:
+                elif pro and trigger.reply:
                         await handler.reply(trigger.reply)
     except AttributeError:
         pass
