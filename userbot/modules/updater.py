@@ -184,7 +184,7 @@ async def upstream(event):
         await print_changelogs(xx, ac_br, changelog)
         await xx.delete()
         return await event.respond(
-            "**Ketik** `{cmd}update now` **untuk Mengupdate Userbot.**"
+            f"**Ketik** `{cmd}update now` **untuk Mengupdate Userbot.**"
         )
 
     if force_update:
@@ -198,7 +198,7 @@ async def upstream(event):
                 and HEROKU_API_KEY is not None
             ):
                 return await xx.edit(
-                    "**Quick update telah dinonaktifkan untuk pembaruan ini; "
+                    f"**Quick update telah dinonaktifkan untuk pembaruan ini; "
                     "Gunakan** `{cmd}update now` **sebagai gantinya.**"
                 )
         await xx.edit("**Perfoming a quick update, please wait...**")
