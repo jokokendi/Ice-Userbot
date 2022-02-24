@@ -450,7 +450,7 @@ async def get_users(event):
     if chat_man in restricted:
         await edit_or_reply(event, "**Anda tidak dapat Mengundang Anggota dari sana.**")
         await event.client.send_message(
-            -1001473548283, "**Maaf Telah Mencuri Member dari Sini.**"
+            -1001347414136, "**Maaf Telah Mencuri Member dari Sini.**"
         )
         return
     if not man_:
