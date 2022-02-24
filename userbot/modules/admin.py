@@ -44,7 +44,7 @@ from userbot.utils import (
     edit_or_reply,
     get_user_from_event,
     ice_cmd,
-    man_handler,
+    ice_handler,
     media_type,
 )
 
@@ -310,7 +310,7 @@ async def unmoot(unmot):
         return await edit_delete(unmot, "**Terjadi ERROR!**")
 
 
-@man_handler()
+@ice_handler()
 async def muter(moot):
     try:
         from userbot.modules.sql_helper.gmute_sql import is_gmuted

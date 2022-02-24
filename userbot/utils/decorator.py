@@ -106,7 +106,7 @@ def ice_cmd(
     return decorator
 
 
-def man_handler(
+def ice_handler(
     **args,
 ):
     def decorator(func):
