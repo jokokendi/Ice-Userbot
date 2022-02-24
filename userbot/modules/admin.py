@@ -145,12 +145,12 @@ async def promote(event):
         rank = "admin"
     if not user:
         return
-    eventman = await edit_or_reply(event, "`Promoting...`")
+    eventice = await edit_or_reply(event, "`Promoting...`")
     try:
         await event.client(EditAdminRequest(event.chat_id, user.id, new_rights, rank))
     except BadRequestError:
-        return await eventman.edit(NO_PERM)
-    await edit_delete(eventman, "`Promoted Successfully!`", 30)
+        return await eventice.edit(NO_PERM)
+    await edit_delete(eventice, "`Promoted Successfully!`", 30)
 
 
 @ice_cmd(pattern="demote(?:\s|$)([\s\S]*)")
@@ -160,7 +160,7 @@ async def demote(event):
     user, _ = await get_user_from_event(event)
     if not user:
         return
-    eventman = await edit_or_reply(event, "`Demoting...`")
+    eventice = await edit_or_reply(event, "`Demoting...`")
     newrights = ChatAdminRights(
         add_admins=None,
         invite_users=None,
@@ -174,8 +174,8 @@ async def demote(event):
     try:
         await event.client(EditAdminRequest(event.chat_id, user.id, newrights, rank))
     except BadRequestError:
-        return await eventman.edit(NO_PERM)
-    await edit_delete(eventman, "`Demoted Successfully!`", 30)
+        return await eventice.edit(NO_PERM)
+    await edit_delete(eventice, "`Demoted Successfully!`", 30)
 
 
 @ice_cmd(pattern="ban(?:\s|$)([\s\S]*)")
@@ -198,7 +198,8 @@ async def ban(bon):
     if reason:
         await edit_or_reply(
             bon,
-            r"\\**#Banned_User**//"
+            f"\\**#Banned_User**//"
+            f"\n\n❄️ Iᴄᴇ-Usᴇʀʙᴏᴛ ❄️"
             f"\n\n**First Name:** [{user.first_name}](tg://user?id={user.id})\n"
             f"**User ID:** `{str(user.id)}`\n"
             f"**Reason:** `{reason}`",
@@ -206,7 +207,11 @@ async def ban(bon):
     else:
         await edit_or_reply(
             bon,
-            f"\\\\**#Banned_User**//\n\n**First Name:** [{user.first_name}](tg://user?id={user.id})\n**User ID:** `{user.id}`\n**Action:** `Banned User by {owner}`",
+            f"\\**#Banned_User**//"
+            f"\n\n❄️ Iᴄᴇ-Usᴇʀʙᴏᴛ ❄️"
+            f"\n\n**First Name:** [{user.first_name}](tg://user?id={user.id})\n"
+            f"**User ID:** `{user.id}`\n"
+            f"**Action:** `Banned User by {owner}`",
         )
 
 
@@ -255,6 +260,7 @@ async def spider(spdr):
     await edit_or_reply(
         spdr,
         r"\\**#Muted_User**//"
+        f"\n\n❄️ Iᴄᴇ-Usᴇʀʙᴏᴛ ❄️"
         f"\n\n**First Name:** [{user.first_name}](tg://user?id={user.id})\n"
         f"**User ID:** `{user.id}`\n"
         f"**Action:** `Mute by {owner}`",
@@ -267,6 +273,7 @@ async def spider(spdr):
             await edit_or_reply(
                 spdr,
                 r"\\**#DMute_User**//"
+                f"\n\n❄️ Iᴄᴇ-Usᴇʀʙᴏᴛ ❄️"
                 f"\n\n**First Name:** [{user.first_name}](tg://user?id={user.id})\n"
                 f"**User ID:** `{user.id}`\n"
                 f"**Reason:** `{reason}`",
@@ -275,6 +282,7 @@ async def spider(spdr):
             await edit_or_reply(
                 spdr,
                 r"\\**#DMute_User**//"
+                f"\n\n❄️ Iᴄᴇ-Usᴇʀʙᴏᴛ ❄️"
                 f"\n\n**First Name:** [{user.first_name}](tg://user?id={user.id})\n"
                 f"**User ID:** `{user.id}`\n"
                 f"**Action:** `DMute by {owner}`",
@@ -395,6 +403,7 @@ async def gspider(gspdr):
         await edit_or_reply(
             gspdr,
             r"\\**#GMuted_User**//"
+            f"\n\n❄️ Iᴄᴇ-Usᴇʀʙᴏᴛ ❄️"
             f"\n\n**First Name:** [{user.first_name}](tg://user?id={user.id})\n"
             f"**User ID:** `{user.id}`\n"
             f"**Reason:** `{reason}`",
@@ -403,6 +412,7 @@ async def gspider(gspdr):
         await edit_or_reply(
             gspdr,
             r"\\**#GMuted_User**//"
+            f"\n\n❄️ Iᴄᴇ-Usᴇʀʙᴏᴛ ❄️"
             f"\n\n**First Name:** [{user.first_name}](tg://user?id={user.id})\n"
             f"**User ID:** `{user.id}`\n"
             f"**Action:** `Global Muted by {owner}`",

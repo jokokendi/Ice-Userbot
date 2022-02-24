@@ -144,7 +144,7 @@ async def filters_active(event):
     for filt in filters:
         if transact == "**Tidak Ada Filter Apapun Disini.**":
             transact = "**✥ Daftar Filter Yang Aktif Disini:**\n"
-        transact += " ✣ `{}`\n".format(filt.keyword)
+        transact += " ✮ `{}`\n".format(filt.keyword)
     await event.edit(transact)
 
 

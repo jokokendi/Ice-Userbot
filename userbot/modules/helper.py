@@ -9,10 +9,10 @@ async def usit(event):
     await edit_or_reply(
         event,
         f"**Hai {owner} Kalo Anda Tidak Tau Perintah Untuk Memerintah Ku Ketik** `.help` Atau Bisa Minta Bantuan Ke:\n"
-        f"✣ **Group :** [ᗰᑌᔑᏆᏦᏦᑌ ᔑᑌᑭᑭᝪᖇᎢ​](t.me/musikkugroup)\n"
-        f"✣ **Channel :** [𝙋𝙧𝙤𝙟𝙚𝙘𝙩 𝙅𝙖𝙬𝙖](t.me/musikkuchannel)\n"
-        f"✣ **Owner Repo :** [Kᴇɴ Kᴀɴ](t.me/escape_aja)\n"
-        f"✣ **Repo :** [Iᴄᴇ-Usᴇʀʙᴏᴛ](https://github.com/jokokendi/Ice-Userbot)\n",
+        f"✮ **Group :** [ᗰᑌᔑᏆᏦᏦᑌ ᔑᑌᑭᑭᝪᖇᎢ​](t.me/musikkugroup)\n"
+        f"✮ **Channel :** [𝙋𝙧𝙤𝙟𝙚𝙘𝙩 𝙅𝙖𝙬𝙖](t.me/musikkuchannel)\n"
+        f"✮ **Owner Repo :** [Kᴇɴ Kᴀɴ](t.me/escape_aja)\n"
+        f"✮ **Repo :** [Iᴄᴇ-Usᴇʀʙᴏᴛ](https://github.com/jokokendi/Ice-Userbot)\n",
     )
 
 

@@ -93,11 +93,11 @@ async def reedme(event):
     await edit_or_reply(
         event,
         "**Berikut sesuatu untuk kamu baca:**\n"
-        "\n✣ [Userbot Repo](https://github.com/jokokendi/Ice-Userbot/blob/Ice-Userbot/README.md)"
-        "\n✣ [Video Tutorial](https://youtu.be/tTDaPKsGC1I)"
-        "\n✣ [List Variabel Heroku untuk Ice-Userbot](https://telegra.ph/List-Variabel-Heroku-untuk-Man-Userbot-09-22)"
-        "\n✣ [Setup Guide - Basic](https://mrismanaziz.medium.com/cara-memasang-userbot-telegram-repo-man-userbot-deploy-di-heroku-c56d1f8b5537)"
-        "\n✣ [Setup Guide - LastFM Module](https://telegra.ph/How-to-set-up-LastFM-module-for-Paperplane-userbot-11-02)",
+        "\n✮ [Userbot Repo](https://github.com/jokokendi/Ice-Userbot/blob/Ice-Userbot/README.md)"
+        "\n✮ [Video Tutorial](https://youtu.be/tTDaPKsGC1I)"
+        "\n✮ [List Variabel Heroku untuk Ice-Userbot](https://telegra.ph/List-Variabel-Heroku-untuk-Man-Userbot-09-22)"
+        "\n✮ [Setup Guide - Basic](https://mrismanaziz.medium.com/cara-memasang-userbot-telegram-repo-man-userbot-deploy-di-heroku-c56d1f8b5537)"
+        "\n✮ [Setup Guide - LastFM Module](https://telegra.ph/How-to-set-up-LastFM-module-for-Paperplane-userbot-11-02)",
     )
 
 
@@ -121,11 +121,11 @@ async def repo_is_here(event):
     await xx.edit(
         f"**Hey**, __I am using__ ❄️ **Iᴄᴇ-Usᴇʀʙᴏᴛ** ❄️\n\n"
         f"      __Thanks For Using me__\n\n"
-        f"✣ **Userbot Version :** `{BOT_VER}@{branch}`\n"
-        f"✣ **Group Support :** [ᗰᑌᔑᏆᏦ Ꮶᑌ](t.me/musikkugroup)\n"
-        f"✣ **Channel Project :** [𝙋𝙧𝙤𝙟𝙚𝙘𝙩 𝙅𝙖𝙬𝙖](t.me/musikkuchannel)\n"
-        f"✣ **Owner Repo :** [Kᴇɴ Kᴀɴ](t.me/escape_aja)\n"
-        f"✣ **Repo :** [Iᴄᴇ-Usᴇʀʙᴏᴛ](https://github.com/jokokendi/Ice-Userbot)"
+        f"✮ **Userbot Version :** `{BOT_VER}@{branch}`\n"
+        f"✮ **Group Support :** [ᗰᑌᔑᏆᏦ Ꮶᑌ](t.me/musikkugroup)\n"
+        f"✮ **Channel Project :** [𝙋𝙧𝙤𝙟𝙚𝙘𝙩 𝙅𝙖𝙬𝙖](t.me/musikkuchannel)\n"
+        f"✮ **Owner Repo :** [Kᴇɴ Kᴀɴ](t.me/escape_aja)\n"
+        f"✮ **Repo :** [Iᴄᴇ-Usᴇʀʙᴏᴛ](https://github.com/jokokendi/Ice-Userbot)"
     )
 
 

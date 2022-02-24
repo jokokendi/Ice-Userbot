@@ -484,7 +484,7 @@ with bot:
                 result = builder.photo(
                     file=logoman,
                     link_preview=False,
-                    text=f"**✗ Ice-Userbot Inline Menu ✗**\n\n✣ **Owner** [{user.first_name}](tg://user?id={user.id})\n✣ **Jumlah** `{len(dugmeler)}` Modules",
+                    text=f"**✗ Ice-Userbot Inline Menu ✗**\n\n✮ **Owner** [{user.first_name}](tg://user?id={user.id})\n✮ **Jumlah** `{len(dugmeler)}` Modules",
                     buttons=buttons,
                 )
             elif query.startswith("repo"):
@@ -493,7 +493,7 @@ with bot:
                     description="Repository Ice - Userbot",
                     url="https://t.me/musikkugroup",
                     thumb=InputWebDocument(INLINE_PIC, 0, "image/jpeg", []),
-                    text="**Ice - UserBot**\n➖➖➖➖➖➖➖➖➖➖\n✣ **Owner Repo :** [Kᴇɴ Kᴀɴ](https://t.me/escape_aja)\n✣ **Support :** @musikkuchannel\n✣ **Repository :** [Iᴄᴇ-Usᴇʀʙᴏᴛ](https://github.com/jokokendi/Ice-Userbot)\n➖➖➖➖➖➖➖➖➖➖",
+                    text="**Ice - UserBot**\n➖➖➖➖➖➖➖➖➖➖\n✮ **Owner Repo :** [Kᴇɴ Kᴀɴ](https://t.me/escape_aja)\n✮ **Support :** @musikkuchannel\n✮ **Repository :** [Iᴄᴇ-Usᴇʀʙᴏᴛ](https://github.com/jokokendi/Ice-Userbot)\n➖➖➖➖➖➖➖➖➖➖",
                     buttons=[
                         [
                             custom.Button.url("ɢʀᴏᴜᴘ", "https://t.me/musikkugroup"),
@@ -542,7 +542,7 @@ with bot:
                     description="Ice - UserBot | Telethon",
                     url="https://t.me/musikkugroup",
                     thumb=InputWebDocument(INLINE_PIC, 0, "image/jpeg", []),
-                    text=f"**Ice - UserBot**\n➖➖➖➖➖➖➖➖➖➖\n✣ **UserMode:** [{user.first_name}](tg://user?id={user.id})\n✣ **Assistant:** {tgbotusername}\n➖➖➖➖➖➖➖➖➖➖\n**Support:** @musikkuchannel\n➖➖➖➖➖➖➖➖➖➖",
+                    text=f"**Ice - UserBot**\n➖➖➖➖➖➖➖➖➖➖\n✮ **UserMode:** [{user.first_name}](tg://user?id={user.id})\n✮ **Assistant:** {tgbotusername}\n➖➖➖➖➖➖➖➖➖➖\n**Support:** @musikkuchannel\n➖➖➖➖➖➖➖➖➖➖",
                     buttons=[
                         [
                             custom.Button.url("ɢʀᴏᴜᴘ", "https://t.me/musikkugroup"),
@@ -562,7 +562,7 @@ with bot:
             if event.query.user_id == uid or event.query.user_id in SUDO_USERS:
                 current_page_number = int(looters)
                 buttons = paginate_help(current_page_number, dugmeler, "helpme")
-                text = f"**✗ Ice-Userbot Inline Menu ✗**\n\n✣ **Owner** [{user.first_name}](tg://user?id={user.id})\n✣ **Jumlah** `{len(dugmeler)}` Modules"
+                text = f"**✗ Ice-Userbot Inline Menu ✗**\n\n✮ **Owner** [{user.first_name}](tg://user?id={user.id})\n✮ **Jumlah** `{len(dugmeler)}` Modules"
                 await event.edit(
                     text,
                     file=logoman,

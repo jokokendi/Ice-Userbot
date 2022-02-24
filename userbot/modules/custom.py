@@ -116,7 +116,7 @@ async def lsnote(event):
     OUT_STR = "**List Custom yang tersedia:**\n"
     if len(all_snips) > 0:
         for a_snip in all_snips:
-            OUT_STR += f"✣ `#{a_snip.keyword}` \n"
+            OUT_STR += f"✮ `#{a_snip.keyword}` \n"
     else:
         OUT_STR = "**Tidak ada custom cmd yang disimpan.**"
     if len(OUT_STR) > 4000:
