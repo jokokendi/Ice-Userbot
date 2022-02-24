@@ -151,7 +151,7 @@ async def upstream(event):
         if conf is None:
             return await xx.edit(
                 f"**Sayangnya, Directory {error} Tampaknya Bukan Dari Repo."
-                "\nTapi Kita Bisa Memperbarui Paksa Userbot Menggunakan** `.update deploy`"
+                "\nTapi Kita Bisa Memperbarui Paksa Userbot Menggunakan** `{cmd}update deploy`"
             )
         repo = Repo.init()
         origin = repo.create_remote("upstream", off_repo)
