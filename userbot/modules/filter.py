@@ -11,7 +11,7 @@ from re import IGNORECASE, escape, search
 from userbot import BLACKLIST_CHAT, BOTLOG_CHATID
 from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP, bot
-from userbot.events import man_cmd, register
+from userbot.events import ice_cmd, register
 
 
 @register(incoming=True, disable_edited=True, disable_errors=True)
@@ -42,7 +42,7 @@ async def filter_incoming_handler(handler):
         pass
 
 
-@bot.on(man_cmd(outgoing=True, pattern=r"filter (.*)"))
+@bot.on(ice_cmd(outgoing=True, pattern=r"filter (.*)"))
 async def add_new_filter(new_handler):
     """For .filter command, allows adding new filters in a chat"""
     if new_handler.chat_id in BLACKLIST_CHAT:
@@ -91,7 +91,7 @@ async def add_new_filter(new_handler):
         await new_handler.edit(success.format(keyword, "Disini"))
 
 
-@bot.on(man_cmd(outgoing=True, pattern=r"stop (.*)"))
+@bot.on(ice_cmd(outgoing=True, pattern=r"stop (.*)"))
 async def remove_a_filter(r_handler):
     """For .stop command, allows you to remove a filter from a chat."""
     try:
@@ -107,7 +107,7 @@ async def remove_a_filter(r_handler):
         )
 
 
-@bot.on(man_cmd(outgoing=True, pattern=r"delfilterbot (.*)"))
+@bot.on(ice_cmd(outgoing=True, pattern=r"delfilterbot (.*)"))
 async def kick_marie_filter(event):
     """ For .bersihkanbotfilter command, allows you to kick all \
         Marie(or her clones) filters from a chat. """
@@ -132,7 +132,7 @@ async def kick_marie_filter(event):
         )
 
 
-@bot.on(man_cmd(outgoing=True, pattern=r"filters$"))
+@bot.on(ice_cmd(outgoing=True, pattern=r"filters$"))
 async def filters_active(event):
     """For .filters command, lists all of the active filters in a chat."""
     try:

@@ -10,13 +10,13 @@ from telethon.tl.types import InputPhoto
 
 from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP, LOGS, STORAGE, bot
-from userbot.events import man_cmd
+from userbot.events import ice_cmd
 
 if not hasattr(STORAGE, "userObj"):
     STORAGE.userObj = False
 
 
-@bot.on(man_cmd(outgoing=True, pattern=r"clone ?(.*)"))
+@bot.on(ice_cmd(outgoing=True, pattern=r"clone ?(.*)"))
 async def impostor(event):
     inputArgs = event.pattern_match.group(1)
 

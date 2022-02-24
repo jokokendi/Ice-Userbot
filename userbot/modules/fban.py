@@ -3,7 +3,7 @@
 from sqlalchemy.exc import IntegrityError
 
 from userbot import CMD_HELP, bot
-from userbot.events import man_cmd
+from userbot.events import ice_cmd
 
 fban_replies = [
     "New FedBan",
@@ -17,7 +17,7 @@ fban_replies = [
 unfban_replies = ["New un-FedBan", "I'll give", "Un-FedBan"]
 
 
-@bot.on(man_cmd(outgoing=True, pattern=r"(d)?fban(?: |$)(.*)"))
+@bot.on(ice_cmd(outgoing=True, pattern=r"(d)?fban(?: |$)(.*)"))
 async def fban(event):
     """Bans a user from connected federations."""
     try:
@@ -47,7 +47,7 @@ async def fban(event):
 
     if event.sender_id == fban_id:
         return await event.edit(
-            "**Error: Tindakan ini telah dicegah oleh protokol keamanan diri Man-UserBot.**"
+            "**Error: Tindakan ini telah dicegah oleh protokol keamanan diri.**"
         )
 
     fed_list = get_flist()
@@ -90,7 +90,7 @@ async def fban(event):
     )
 
 
-@bot.on(man_cmd(outgoing=True, pattern=r"unfban(?: |$)(.*)"))
+@bot.on(ice_cmd(outgoing=True, pattern=r"unfban(?: |$)(.*)"))
 async def unfban(event):
     """Unbans a user from connected federations."""
     try:
@@ -156,7 +156,7 @@ async def unfban(event):
     )
 
 
-@bot.on(man_cmd(outgoing=True, pattern=r"addf(?: |$)(.*)"))
+@bot.on(ice_cmd(outgoing=True, pattern=r"addf(?: |$)(.*)"))
 async def addf(event):
     """Adds current chat to connected federations."""
     try:
@@ -176,7 +176,7 @@ async def addf(event):
     await event.edit("**Menambahkan grup ini ke daftar federasi!**")
 
 
-@bot.on(man_cmd(outgoing=True, pattern=r"delf$"))
+@bot.on(ice_cmd(outgoing=True, pattern=r"delf$"))
 async def delf(event):
     """Removes current chat from connected federations."""
     try:
@@ -188,7 +188,7 @@ async def delf(event):
     await event.edit("**Menghapus grup ini dari daftar federasi!**")
 
 
-@bot.on(man_cmd(outgoing=True, pattern=r"listf$"))
+@bot.on(ice_cmd(outgoing=True, pattern=r"listf$"))
 async def listf(event):
     """List all connected federations."""
     try:
@@ -208,7 +208,7 @@ async def listf(event):
     await event.edit(msg)
 
 
-@bot.on(man_cmd(outgoing=True, pattern=r"clearf$"))
+@bot.on(ice_cmd(outgoing=True, pattern=r"clearf$"))
 async def clearf(event):
     """Removes all chats from connected federations."""
     try:

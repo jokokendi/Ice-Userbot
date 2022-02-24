@@ -14,10 +14,10 @@ import time
 
 from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP
-from userbot.utils import edit_delete, extract_time, man_cmd
+from userbot.utils import edit_delete, extract_time, ice_cmd
 
 
-@man_cmd(
+@ice_cmd(
     pattern="f(typing|audio|contact|document|game|location|photo|round|sticker|video) ?(.*)"
 )
 async def _(e):

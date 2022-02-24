@@ -16,7 +16,7 @@ from speedtest import Speedtest
 from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP, StartTime, bot, DEVS
 from userbot.events import register
-from userbot.utils import edit_or_reply, humanbytes, man_cmd
+from userbot.utils import edit_or_reply, humanbytes, ice_cmd
 
 absen = [
     "**Hadir bang** 😁",
@@ -53,7 +53,7 @@ async def get_readable_time(seconds: int) -> str:
     return up_time
 
 
-@man_cmd(pattern="ping$")
+@ice_cmd(pattern="ping$")
 async def _(ping):
     """For .ping command, ping the userbot from any chat."""
     uptime = await get_readable_time((time.time() - StartTime))
@@ -73,7 +73,7 @@ async def _(ping):
     )
 
 
-@man_cmd(pattern=r"xping$")
+@ice_cmd(pattern=r"xping$")
 async def _(ping):
     """For .ping command, ping the userbot from any chat."""
     uptime = await get_readable_time((time.time() - StartTime))
@@ -86,7 +86,7 @@ async def _(ping):
     )
 
 
-@man_cmd(pattern=r"lping$")
+@ice_cmd(pattern=r"lping$")
 async def _(ping):
     """For .ping command, ping the userbot from any chat."""
     uptime = await get_readable_time((time.time() - StartTime))
@@ -108,7 +108,7 @@ async def _(ping):
     )
 
 
-@man_cmd(pattern=r"keping$")
+@ice_cmd(pattern=r"keping$")
 async def _(pong):
     await get_readable_time((time.time() - StartTime))
     start = datetime.now()
@@ -130,7 +130,7 @@ async def _(pong):
 # .keping & kping Coded by Koala
 
 
-@man_cmd(pattern=r"kping$")
+@ice_cmd(pattern=r"kping$")
 async def _(pong):
     uptime = await get_readable_time((time.time() - StartTime))
     start = datetime.now()
@@ -160,7 +160,7 @@ async def _(pong):
     )
 
 
-@man_cmd(pattern="speedtest$")
+@ice_cmd(pattern="speedtest$")
 async def _(speed):
     """For .speedtest command, use SpeedTest to check server speeds."""
     xxnx = await edit_or_reply(speed, "`Running speed test...`")
@@ -192,7 +192,7 @@ async def _(speed):
     )
 
 
-@man_cmd(pattern="pong$")
+@ice_cmd(pattern="pong$")
 async def _(pong):
     """For .ping command, ping the userbot from any chat."""
     start = datetime.now()

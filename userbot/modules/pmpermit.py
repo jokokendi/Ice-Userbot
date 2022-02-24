@@ -15,7 +15,7 @@ from telethon.tl.types import User
 from userbot import BOTLOG_CHATID
 from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP, COUNT_PM, LASTMSG, LOGS, PM_AUTO_BAN, PM_LIMIT, bot
-from userbot.events import man_cmd, register
+from userbot.events import ice_cmd, register
 from userbot.utils import edit_delete, edit_or_reply
 
 DEF_UNAPPROVED_MSG = (
@@ -162,7 +162,7 @@ async def auto_accept(event):
                     )
 
 
-@bot.on(man_cmd(outgoing=True, pattern=r"notifoff$"))
+@bot.on(ice_cmd(outgoing=True, pattern=r"notifoff$"))
 async def notifoff(noff_event):
     """For .notifoff command, stop getting notifications from unapproved PMs."""
     try:
@@ -175,7 +175,7 @@ async def notifoff(noff_event):
     )
 
 
-@bot.on(man_cmd(outgoing=True, pattern=r"notifon$"))
+@bot.on(ice_cmd(outgoing=True, pattern=r"notifon$"))
 async def notifon(non_event):
     """For .notifoff command, get notifications from unapproved PMs."""
     try:
@@ -188,7 +188,7 @@ async def notifon(non_event):
     )
 
 
-@bot.on(man_cmd(outgoing=True, pattern=r"(?:setuju|ok)\s?(.)?"))
+@bot.on(ice_cmd(outgoing=True, pattern=r"(?:setuju|ok)\s?(.)?"))
 async def approvepm(apprvpm):
     """For .ok command, give someone the permissions to PM you."""
     try:
@@ -251,7 +251,7 @@ async def approvepm(apprvpm):
     )
 
 
-@bot.on(man_cmd(outgoing=True, pattern=r"(?:tolak|nopm)\s?(.)?"))
+@bot.on(ice_cmd(outgoing=True, pattern=r"(?:tolak|nopm)\s?(.)?"))
 async def disapprovepm(disapprvpm):
     try:
         from userbot.modules.sql_helper.pm_permit_sql import dissprove
@@ -305,7 +305,7 @@ async def disapprovepm(disapprvpm):
     )
 
 
-@bot.on(man_cmd(outgoing=True, pattern=r"block$"))
+@bot.on(ice_cmd(outgoing=True, pattern=r"block$"))
 async def blockpm(block):
     """For .block command, block people from PMing you!"""
     if block.reply_to_msg_id:
@@ -331,7 +331,7 @@ async def blockpm(block):
         pass
 
 
-@bot.on(man_cmd(outgoing=True, pattern=r"unblock$"))
+@bot.on(ice_cmd(outgoing=True, pattern=r"unblock$"))
 async def unblockpm(unblock):
     """For .unblock command, let people PMing you again!"""
     if unblock.reply_to_msg_id:
@@ -341,7 +341,7 @@ async def unblockpm(unblock):
         await unblock.edit("**Anda Sudah Tidak Diblokir Lagi.**")
 
 
-@bot.on(man_cmd(outgoing=True, pattern=r"(set|get|reset) pmpermit(?: |$)(\w*)"))
+@bot.on(ice_cmd(outgoing=True, pattern=r"(set|get|reset) pmpermit(?: |$)(\w*)"))
 async def add_pmsg(cust_msg):
     """Set your own Unapproved message"""
     if not PM_AUTO_BAN:

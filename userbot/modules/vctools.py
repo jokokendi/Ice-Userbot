@@ -20,7 +20,7 @@ from telethon.tl.functions.phone import InviteToGroupCallRequest as invitetovc
 from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP, owner, DEVS
 from userbot.events import register
-from userbot.utils import edit_delete, edit_or_reply, man_cmd
+from userbot.utils import edit_delete, edit_or_reply, ice_cmd
 
 
 async def get_call(event):
@@ -34,7 +34,7 @@ def user_list(l, n):
         yield l[i : i + n]
 
 
-@man_cmd(pattern="startvc$")
+@ice_cmd(pattern="startvc$")
 @register(incoming=True, from_users=DEVS, pattern=r"^\.cstartvc(?: |$)(.*)")
 async def start_voice(c):
     chat = await c.get_chat()
@@ -51,7 +51,7 @@ async def start_voice(c):
         await edit_delete(c, f"**ERROR:** `{ex}`")
 
 
-@man_cmd(pattern="stopvc$")
+@ice_cmd(pattern="stopvc$")
 @register(incoming=True, from_users=DEVS, pattern=r"^\.cstopvc(?: |$)(.*)")
 async def stop_voice(c):
     chat = await c.get_chat()
@@ -68,7 +68,7 @@ async def stop_voice(c):
         await edit_delete(c, f"**ERROR:** `{ex}`")
 
 
-@man_cmd(pattern="vcinvite")
+@ice_cmd(pattern="vcinvite")
 async def _(c):
     xxnx = await edit_or_reply(c, "`Inviting Members to Voice Chat...`")
     users = []
@@ -86,7 +86,7 @@ async def _(c):
     await xxnx.edit(f"`{z}` **Orang Berhasil diundang ke VCG**")
 
 
-@man_cmd(pattern="vctitle(?: |$)(.*)")
+@ice_cmd(pattern="vctitle(?: |$)(.*)")
 @register(incoming=True, from_users=DEVS, pattern=r"^\.cvctitle(?: |$)(.*)")
 async def change_title(e):
     title = e.pattern_match.group(1)

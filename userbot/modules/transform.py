@@ -10,11 +10,11 @@ from telethon.tl.types import DocumentAttributeFilename
 
 from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP, bot
-from userbot.events import man_cmd, register
+from userbot.events import ice_cmd, register
 from userbot.utils import bash
 
 
-@bot.on(man_cmd(outgoing=True, pattern=r"(mirror|flip|ghost|bw|poster)$"))
+@bot.on(ice_cmd(outgoing=True, pattern=r"(mirror|flip|ghost|bw|poster)$"))
 async def transform(event):
     if not event.reply_to_msg_id:
         await event.edit("**Mohon Reply ke Media atau Sticker**")
@@ -87,7 +87,7 @@ async def _(event):
     await bot.delete_messages(1607338903, msg, revoke=False)
 
 
-@bot.on(man_cmd(outgoing=True, pattern=r"rotate(?: |$)(.*)"))
+@bot.on(ice_cmd(outgoing=True, pattern=r"rotate(?: |$)(.*)"))
 async def rotate(event):
     if not event.reply_to_msg_id:
         await event.edit("**Mohon Reply ke Media atau Sticker**")

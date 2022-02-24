@@ -2,53 +2,53 @@ from time import sleep
 
 from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP, owner
-from userbot.utils import edit_or_reply, man_cmd
+from userbot.utils import edit_or_reply, ice_cmd
 
 
-@man_cmd(pattern="p(?: |$)(.*)")
+@ice_cmd(pattern="p(?: |$)(.*)")
 async def _(event):
     await edit_or_reply(event, "**Assalamualaikum Dulu Biar Sopan**")
 
 
-@man_cmd(pattern="pe(?: |$)(.*)")
+@ice_cmd(pattern="pe(?: |$)(.*)")
 async def _(event):
     await edit_or_reply(event, "**Assalamualaikum Warahmatullahi Wabarakatuh**")
 
 
-@man_cmd(pattern="P(?: |$)(.*)")
+@ice_cmd(pattern="P(?: |$)(.*)")
 async def _(event):
     xx = await edit_or_reply(event, f"**Haii Salken Saya {owner}**")
     sleep(2)
     await xx.edit("**Assalamualaikum...**")
 
 
-@man_cmd(pattern="l(?: |$)(.*)")
+@ice_cmd(pattern="l(?: |$)(.*)")
 async def _(event):
     await edit_or_reply(event, "**Wa'alaikumsalam**")
 
 
-@man_cmd(pattern="a(?: |$)(.*)")
+@ice_cmd(pattern="a(?: |$)(.*)")
 async def _(event):
     xx = await edit_or_reply(event, f"**Haii Salken Saya {owner}**")
     sleep(2)
     await xx.edit("**Assalamualaikum**")
 
 
-@man_cmd(pattern="j(?: |$)(.*)")
+@ice_cmd(pattern="j(?: |$)(.*)")
 async def _(event):
     xx = await edit_or_reply(event, "**JAKA SEMBUNG BAWA GOLOK**")
     sleep(3)
     await xx.edit("**NIMBRUNG GOBLOKK!!!🔥**")
 
 
-@man_cmd(pattern="k(?: |$)(.*)")
+@ice_cmd(pattern="k(?: |$)(.*)")
 async def _(event):
     xx = await edit_or_reply(event, f"**Hallo KIMAAKK SAYA {owner}**")
     sleep(2)
     await xx.edit("**LU SEMUA NGENTOT 🔥**")
 
 
-@man_cmd(pattern="ass(?: |$)(.*)")
+@ice_cmd(pattern="ass(?: |$)(.*)")
 async def _(event):
     xx = await edit_or_reply(event, "**Salam Dulu Biar Sopan**")
     sleep(2)

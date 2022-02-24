@@ -51,10 +51,10 @@ LOGS.info(
     f"Jika {user.first_name} Membutuhkan Bantuan, Silahkan Tanyakan di Grup https://t.me/musikkugroup"
 )
 
-LOGS.info(f"Ice-Userbot ⚙️ V{BOT_VER} [🔥 BERHASIL DIAKTIFKAN! 🔥]")
+LOGS.info(f"Ice-Userbot ⚙️ V{BOT_VER} [❄️ BERHASIL DIAKTIFKAN! ❄️]")
 
 
-async def man_userbot_on():
+async def ice_userbot_on():
     try:
         if BOTLOG_CHATID != 0:
             await bot.send_message(
@@ -70,7 +70,7 @@ async def man_userbot_on():
 
 
 bot.loop.run_until_complete(checking())
-bot.loop.run_until_complete(man_userbot_on())
+bot.loop.run_until_complete(ice_userbot_on())
 if not BOT_TOKEN:
     bot.loop.run_until_complete(autobot())
 idle()

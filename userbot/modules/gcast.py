@@ -17,14 +17,14 @@ from telethon.errors.rpcerrorlist import FloodWaitError
 
 from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP, DEVS
-from userbot.utils import edit_delete, edit_or_reply, man_cmd
+from userbot.utils import edit_delete, edit_or_reply, ice_cmd
 
 GCAST_BLACKLIST = get(
     "https://raw.githubusercontent.com/jokokendi/Reforestation/master/blacklistgcast.json"
 ).json()
 
 
-@man_cmd(pattern="gcast(?: |$)(.*)")
+@ice_cmd(pattern="gcast(?: |$)(.*)")
 async def gcast(event):
     xx = event.pattern_match.group(1)
     if xx:
@@ -53,7 +53,7 @@ async def gcast(event):
     )
 
 
-@man_cmd(pattern="gucast(?: |$)(.*)")
+@ice_cmd(pattern="gucast(?: |$)(.*)")
 async def gucast(event):
     xx = event.pattern_match.group(1)
     if xx:
