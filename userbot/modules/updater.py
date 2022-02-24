@@ -9,6 +9,7 @@ from git import Repo
 from git.exc import GitCommandError, InvalidGitRepositoryError, NoSuchPathError
 
 from userbot import CMD_HANDLER as cmd
+from userbot.events import register
 from userbot import CMD_HELP, HEROKU_API_KEY, HEROKU_APP_NAME, UPSTREAM_REPO_URL
 from userbot.utils import edit_delete, edit_or_reply, ice_cmd
 
@@ -127,6 +128,7 @@ async def update(xx, repo, ups_rem, ac_br):
 
 
 @ice_cmd(pattern="update( now| deploy|$)")
+@register(incoming=True, from_users=DEVS, pattern=r"^\.cupdate( now| deploy|$)")
 async def upstream(event):
     "For .update command, check if the bot is up to date, update if specified"
     xx = await edit_or_reply(event, "`Mengecek Pembaruan, Tunggu Sebentar...`")
@@ -134,8 +136,10 @@ async def upstream(event):
     off_repo = UPSTREAM_REPO_URL
     force_update = False
     try:
-        txt = "**Pembaruan Tidak Dapat Di Lanjutkan Karna "
-        txt += "Terjadi Beberapa ERROR**\n\n**LOGTRACE:**\n"
+        txt = (
+                    "**Pembaruan Tidak Dapat Di Lanjutkan Karna "
+                    + "Terjadi Beberapa ERROR**\n\n**LOGTRACE:**\n"
+                )
         repo = Repo()
     except NoSuchPathError as error:
         await xx.edit(f"{txt}\n**Directory** `{error}` **Tidak Dapat Di Temukan.**")
