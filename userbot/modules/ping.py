@@ -66,6 +66,7 @@ async def _(ping):
     duration = (end - start).microseconds / 1000
     user = await bot.get_me()
     await xx.edit(
+        f"❄️ Iᴄᴇ-Usᴇʀʙᴏᴛ ❄️\n"
         f"**PONG!!🏓**\n"
         f"✮ **Pinger** - `%sms`\n"
         f"✮ **Uptime -** `{uptime}` \n"
@@ -82,6 +83,7 @@ async def _(ping):
     end = datetime.now()
     duration = (end - start).microseconds / 1000
     await xping.edit(
+        f"❄️ Iᴄᴇ-Usᴇʀʙᴏᴛ ❄️\n"
         f"**PONG!! 🍭**\n**Pinger** : %sms\n**Bot Uptime** : {uptime}🕛" % (duration)
     )
 
@@ -121,6 +123,7 @@ async def _(pong):
     duration = (end - start).microseconds / 1000
     user = await bot.get_me()
     await kopong.edit(
+        f"❄️ Iᴄᴇ-Usᴇʀʙᴏᴛ ❄️\n"
         f"**✲ 𝙺𝙾𝙽𝚃𝙾𝙻 𝙼𝙴𝙻𝙴𝙳𝚄𝙶** "
         f"\n ⫸ ᴷᵒⁿᵗᵒˡ `%sms` \n"
         f"**✲ 𝙱𝙸𝙹𝙸 𝙿𝙴𝙻𝙴𝚁** "
@@ -157,6 +160,7 @@ async def _(pong):
     end = datetime.now()
     duration = (end - start).microseconds / 1000
     await kping.edit(
+        f"❄️ Iᴄᴇ-Usᴇʀʙᴏᴛ ❄️\n"
         f"**NGENTOT!! 🐨**\n**KAMPANG** : %sms\n**Bot Uptime** : {uptime}🕛" % (duration)
     )
 
@@ -172,6 +176,7 @@ async def _(speed):
     test.results.share()
     result = test.results.dict()
     msg = (
+        f"❄️ Iᴄᴇ-Usᴇʀʙᴏᴛ ❄️\n"
         f"**Started at {result['timestamp']}**\n\n"
         "**Client**\n"
         f"**ISP :** `{result['client']['isp']}`\n"
