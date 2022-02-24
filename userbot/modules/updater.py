@@ -184,7 +184,7 @@ async def upstream(event):
         await print_changelogs(xx, ac_br, changelog)
         await xx.delete()
         return await event.respond(
-            "**Ketik** `.update deploy` **untuk Mengupdate Userbot.**"
+            "**Ketik** `{cmd}update now` **untuk Mengupdate Userbot.**"
         )
 
     if force_update:
@@ -199,7 +199,7 @@ async def upstream(event):
             ):
                 return await xx.edit(
                     "**Quick update telah dinonaktifkan untuk pembaruan ini; "
-                    "Gunakan** `.update deploy` **sebagai gantinya.**"
+                    "Gunakan** `{cmd}update now` **sebagai gantinya.**"
                 )
         await xx.edit("**Perfoming a quick update, please wait...**")
         await update(xx, repo, ups_rem, ac_br)
