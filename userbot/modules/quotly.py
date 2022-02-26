@@ -2,17 +2,15 @@
 # FROM Man-Userbot <https://github.com/mrismanaziz/Man-Userbot>
 # t.me/SharingUserbot & t.me/Lunatic0de
 
-import asyncio
+from os import remove
+from random import choice
 
-from telethon import events
-from telethon.errors.rpcerrorlist import YouBlockedUserError
-from telethon.tl.functions.contacts import UnblockRequest
+from telethon.tl.functions.users import GetFullUserRequest
 
 from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP
 from userbot.utils import edit_delete, edit_or_reply, ice_cmd
 from userbot.utils.misc import create_quotly
-from .carbon import all_col
 
 
 @ice_cmd(pattern="q( (.*)|$)")
