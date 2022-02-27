@@ -13,7 +13,7 @@ from telethon.tl.types import InputMessagesFilterVideo
 @ice_cmd(pattern="asupan$")
 async def _(event):
     try:
-        response = bot.iter_messages(
+        response = await client.iter_messages(
             "@tedeasupancache", filter=InputMessagesFilterVideo
         )
         aing = await event.client.get_me()
