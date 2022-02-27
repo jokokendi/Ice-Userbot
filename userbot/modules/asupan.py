@@ -56,7 +56,7 @@ CMD_HELP.update(
         \n\n  •  **Syntax :** `{cmd}asupan`\
         \n  •  **Function : **Untuk Mengirim video asupan secara random.\
         \n\n  •  **Syntax :** `{cmd}desah`\
-        \n  •  **Function : **Untuk Mengirim video wibu secara random.\
+        \n  •  **Function : **Untuk Mengirim voice desah secara random.\
     "
     }
 )
