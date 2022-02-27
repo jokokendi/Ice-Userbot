@@ -6,13 +6,20 @@ import requests
 from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP
 from userbot.utils import ice_cmd
-
+import random
+from userbot import owner
+from telethon.tl.types import InputMessagesFilterVideo
 
 @ice_cmd(pattern="asupan$")
 async def _(event):
     try:
-        response = requests.get("https://api-tede.herokuapp.com/api/asupan/ptl").json()
-        await event.client.send_file(event.chat_id, response["url"])
+        response = bot.iter_messages(
+            "@tedeasupancache", filter=InputMessagesFilterVideo
+        )
+        aing = await event.client.get_me()
+        await event.client.send_file(event.chat_id, 
+        caption=f"Nih kak asupannya [{owner}](tg://user?id={aing.id})",
+        file=random.choice(response))
         await event.delete()
     except Exception:
         await event.edit("**Tidak bisa menemukan video asupan.**")
