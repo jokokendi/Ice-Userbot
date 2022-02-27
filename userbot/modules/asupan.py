@@ -17,9 +17,7 @@ async def _(event):
             "@tedeasupancache", filter=InputMessagesFilterVideo
         )
         aing = await event.client.get_me()
-        await event.client.send_file(event.chat_id, 
-        caption=f"Nih kak asupannya [{owner}](tg://user?id={aing.id})",
-        file=random.choice(response))
+        await event.client.send_file(event.chat_id, caption=f"Nih kak asupannya [{owner}](tg://user?id={aing.id})", file=random.choice(response))
         await event.delete()
     except Exception:
         await event.edit("**Tidak bisa menemukan video asupan.**")
