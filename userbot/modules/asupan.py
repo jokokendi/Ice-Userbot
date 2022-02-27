@@ -13,15 +13,21 @@ from telethon.tl.types import InputMessagesFilterVideo
 @ice_cmd(pattern="asupan$")
 async def _(event):
     try:
-        response = await client.iter_messages(
-            "@tedeasupancache", filter=InputMessagesFilterVideo
-        )
+        asupannya = [
+            asupan
+            async for asupan in event.client.iter_messages(
+                "@tedeasupancache", filter=InputMessagesFilterVideo
+            )
+        ]
         aing = await event.client.get_me()
-        await event.send_file(event.chat_id, caption=f"Nih kak asupannya [{owner}](tg://user?id={aing.id})", file=random.choice(response))
+        await event.client.send_file(
+            event.chat_id,
+            file=random.choice(asupannya),
+            caption=f"Nih kak asupannya [{owner}](tg://user?id={aing.id})",
+        )
         await event.delete()
     except Exception:
-        await event.edit("**Tidak bisa menemukan video asupan.**")
-
+        await event.edit("Tidak bisa menemukan video asupan.")
 
 @ice_cmd(pattern="wibu$")
 async def _(event):
