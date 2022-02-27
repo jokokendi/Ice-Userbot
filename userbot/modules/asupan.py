@@ -33,7 +33,7 @@ async def _(event):
 @ice_cmd(pattern="desah$")
 async def _(event):
     try:
-        desahnnya = [
+        desahnya = [
             desah
             async for desah in event.client.iter_messages(
                 "@DESAHANFCE", filter=InputMessagesFilterVoice
