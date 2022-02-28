@@ -82,7 +82,7 @@ Gunakan bot ini dengan risiko Anda sendiri, dan gunakan userbot ini dengan bijak
 
 ## Updates & Support
 
-Follow Channel [@musikkuchannel](https://t.me/musikkuchannel) untuk info Update bot dan Gabung Group [@musikkugroup](https://t.me/musikkugroup) untuk untuk diskusi, pelaporan bug, dan bantuan tentang Man-Userbot.
+Follow Channel [@musikkuchannel](https://t.me/musikkuchannel) untuk info Update bot dan Gabung Group [@musikkugroup](https://t.me/musikkugroup) untuk untuk diskusi, pelaporan bug, dan bantuan tentang Ice-Userbot.
 
 #### Special Thanks To [Everyone](https://github.com/mrismanaziz/Man-Userbot/graphs/contributors) Who Has Helped Make This Userbot Awesome!
 -  [AdekMaulana](https://github.com/adekmaulana) : ProjectBish
@@ -103,4 +103,4 @@ Follow Channel [@musikkuchannel](https://t.me/musikkuchannel) untuk info Update 
 -  [Risman](https://github.com/mrismanaziz) for [Man-Userbot](https://github.com/mrismanaziz/Man-Userbot)
 
 ## License
-Licensed under [Raphielscape Public License](https://github.com/mrismanaziz/Man-Userbot/blob/Man-Userbot/LICENSE) - Version 1.d, February 2020
+Licensed under [Raphielscape Public License](https://github.com/jokokendi/Ice-Userbot/blob/Ice-Userbot/LICENSE) - Version 1.d, February 2020
