@@ -28,9 +28,9 @@ Gunakan bot ini dengan risiko Anda sendiri, dan gunakan userbot ini dengan bijak
 
 ## Tutorial
 
--  [Panduan Cara Memasang Man-Userbot](https://mrismanaziz.medium.com/cara-memasang-userbot-telegram-repo-man-userbot-deploy-di-heroku-c56d1f8b5537)
+-  [Panduan Cara Memasang Ice-Userbot](https://mrismanaziz.medium.com/cara-memasang-userbot-telegram-repo-man-userbot-deploy-di-heroku-c56d1f8b5537)
 -  [Cara Setting Last.FM modules](https://telegra.ph/How-to-set-up-LastFM-module-for-Paperplane-userbot-11-02)
--  [List Variabel Man-Userbot](https://telegra.ph/List-Variabel-Heroku-untuk-Man-Userbot-09-22)
+-  [List Variabel Ice-Userbot](https://telegra.ph/List-Variabel-Heroku-untuk-Man-Userbot-09-22)
 
 <details>
 <summary><b>🔗 String Session</b></summary>
@@ -38,7 +38,7 @@ Gunakan bot ini dengan risiko Anda sendiri, dan gunakan userbot ini dengan bijak
     
 > Anda memerlukan API_ID & API_HASH untuk menghasilkan sesi telethon. ambil APP ID dan API Hash di my.telegram.org
 <h4> Generate Session via Repl: </h4>    
-<p><a href="https://repl.it/@mrismanaziz/stringenSession?lite=1&outputonly=1"><img src="https://img.shields.io/badge/Generate%20On%20Repl-blueviolet?style=for-the-badge&logo=appveyor" width="200""/></a></p>
+<p><a href="https://repl.it/@kenkannih/stringen-session?lite=1&outputonly=1"><img src="https://img.shields.io/badge/Generate%20On%20Repl-blueviolet?style=for-the-badge&logo=appveyor" width="200""/></a></p>
 <h4> Generate Session via Telegram StringGen Bot: </h4>    
 <p><a href="https://t.me/Stringdurhakabot"><img src="https://img.shields.io/badge/TG%20String%20Gen%20Bot-blueviolet?style=for-the-badge&logo=appveyor" width="200""/></a></p>
     
@@ -104,3 +104,4 @@ Follow Channel [@musikkuchannel](https://t.me/musikkuchannel) untuk info Update 
 
 ## License
 Licensed under [Raphielscape Public License](https://github.com/jokokendi/Ice-Userbot/blob/Ice-Userbot/LICENSE) - Version 1.d, February 2020
+
