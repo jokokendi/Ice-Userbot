@@ -1,134 +1,47 @@
 # 🍀 © @tofik_dn
 # ⚠️ Do not remove credits
+import asyncio
 
-import os
-import random
-import glob
-from PIL import Image, ImageDraw, ImageFont
-from telethon.tl.types import InputMessagesFilterPhotos
+from telethon.errors.rpcerrorlist import YouBlockedUserError
+from telethon.tl.functions.contacts import UnblockRequest
 
 from userbot import CMD_HANDLER as cmd
-from userbot import CMD_HELP, owner
+from userbot import CMD_HELP
 from userbot.utils import edit_delete, edit_or_reply, ice_cmd
 
-def mediainfo(media):
-    xx = str((str(media)).split("(", maxsplit=1)[0])
-    m = ""
-    if xx == "MessageMediaDocument":
-        mim = media.document.mime_type
-        if mim == "application/x-tgsticker":
-            m = "sticker animated"
-        elif "image" in mim:
-            if mim == "image/webp":
-                m = "sticker"
-            elif mim == "image/gif":
-                m = "gif as doc"
-            else:
-                m = "pic as doc"
-        elif "video" in mim:
-            if "DocumentAttributeAnimated" in str(media):
-                m = "gif"
-            elif "DocumentAttributeVideo" in str(media):
-                i = str(media.document.attributes[0])
-                if "supports_streaming=True" in i:
-                    m = "video"
-                m = "video as doc"
-            else:
-                m = "video"
-        elif "audio" in mim:
-            m = "audio"
-        else:
-            m = "document"
-    elif xx == "MessageMediaPhoto":
-        m = "pic"
-    elif xx == "MessageMediaWebPage":
-        m = "web"
-    return m
- 
-    
-@ice_cmd(pattern=r"logo(?: |$)(.*)")
+
+@ice_cmd(pattern="logo(?: |$)(.*)")
 async def _(event):
-    xx = await event.reply("**Prosseing logo...**")
-    aing = await event.client.get_me()
-    name = event.pattern_match.group(1)
-    if not name:
-        await xx.edit("**Silahkan bales ke pesan**")
+    if event.fwd_from:
         return
-    bg_, font_ = "", ""
-    if event.reply_to_msg_id:
-        temp = await event.get_reply_message()
-        if temp.media:
-            if hasattr(temp.media, "document"):
-                if "font" in temp.file.mime_type:
-                    font_ = await temp.download_media()
-                elif (".ttf" in temp.file.name) or (".otf" in temp.file.name):
-                    font_ = await temp.download_media()
-            elif "pic" in mediainfo(temp.media):
-                bg_ = await temp.download_media()
+    aing = await event.client.get_me()
+    text = event.pattern_match.group(1)
+    if not text:
+        await edit_delete(event, "**Silahkan Masukan Text Untuk Logo**")
     else:
-        pics = []
-        async for i in event.client.iter_messages(
-            "@KenLogopack", filter=InputMessagesFilterPhotos
-        ):
-            pics.append(i)
-        id_ = random.choice(pics)
-        bg_ = await id_.download_media()
-        fpath_ = glob.glob("./userbot/resources/*")
-        font_ = random.choice(fpath_)
-    if not bg_:
-        pics = []
-        async for i in event.client.iter_messages(
-            "@KenLogopack", filter=InputMessagesFilterPhotos
-        ):
-            pics.append(i)
-        id_ = random.choice(pics)
-        bg_ = await id_.download_media()
-    if not font_:
-        fpath_ = glob.glob("./userbot/resources/*")
-        font_ = random.choice(fpath_)
-    if len(name) <= 8:
-        fnt_size = 120
-        strke = 10
-    elif len(name) >= 9:
-        fnt_size = 50
-        strke = 5
-    else:
-        fnt_size = 100
-        strke = 20
-    img = Image.open(bg_)
-    draw = ImageDraw.Draw(img)
-    font = ImageFont.truetype(font_, fnt_size)
-    w, h = draw.textsize(name, font=font)
-    h += int(h * 0.21)
-    image_width, image_height = img.size
-    draw.text(
-        ((image_width - w) / 2, (image_height - h) / 2),
-        name,
-        font=font,
-        fill=(255, 255, 255),
-    )
-    x = (image_width - w) / 2
-    y = (image_height - h) / 2
-    draw.text((x, y), name, font=font, fill="white",
-              stroke_width=strke, stroke_fill="black")
-    flnme = f"logo.png"
-    img.save(flnme, "png")
-    await xx.edit("`Uploading`")
-    if os.path.exists(flnme):
-        await tbot.send_file(
+        await edit_or_reply(event, "`Processing...`")
+    chat = "@tdtapibot"
+    async with event.client.conversation(chat) as conv:
+        try:
+            msg = await conv.send_message(f"/logo {text}")
+            response = await conv.get_response()
+            logo = await conv.get_response()
+            await event.client.send_read_acknowledge(conv.chat_id)
+        except YouBlockedUserError:
+            await event.client(UnblockRequest(chat))
+            msg = await conv.send_message(f"/logo {text}")
+            response = await conv.get_response()
+            logo = await conv.get_response()
+            await event.client.send_read_acknowledge(conv.chat_id)
+        await asyncio.sleep(0.5)
+        await event.client.send_file(
             event.chat_id,
-            file=flnme,
-            caption=f"Logo by [{owner}](tg://user?id={aing.id})",
-            force_document=False,
+            logo,
+            caption=f"Logo by [{aing.first_name}](tg://user?id={aing.id})",
         )
-        os.remove(flnme)
-        await xx.delete()
-    if os.path.exists(bg_):
-        os.remove(bg_) 
-    if os.path.exists(font_):
-        if not font_.startswith("./userbot/resources"):
-            os.remove(font_) 
-  
+        await event.client.delete_messages(conv.chat_id, [msg.id, response.id, logo.id])
+        await event.delete()
+
 
 CMD_HELP.update(
     {
