@@ -39,7 +39,7 @@ from userbot import S_PACK_NAME as custompack
 from userbot import tgbot
 from userbot.modules.sql_helper.globals import addgvar, gvarstatus
 from userbot.utils import edit_delete, edit_or_reply, ice_cmd
-from userbot.utils.misc import animator, create_quotly
+from userbot.utils.misc import animator
 
 KANGING_STR = [
     "Colong Sticker dulu yee kan",
@@ -75,9 +75,6 @@ async def kang(args):
         await edit_delete(
             args, "**File Tidak Didukung, Silahkan Reply ke Media Foto/GIF !**"
         )
-    elif message.message:
-        xx = await edit_or_reply(args, f"`{random.choice(KANGING_STR)}`")
-        photo = await create_quotly(message)
     elif message.file and "image" in message.file.mime_type.split("/"):
         xx = await edit_or_reply(args, f"`{random.choice(KANGING_STR)}`")
         photo = io.BytesIO()
@@ -373,7 +370,7 @@ async def _(event):
                 functions.stickers.CreateStickerSetRequest(
                     user_id=OWNER_ID,
                     title=pname,
-                    short_name=f"ice_{un_}_V{pack}_by_{bot_un}",
+                    short_name=f"man_{un_}_V{pack}_by_{bot_un}",
                     stickers=stcrs,
                 )
             )
@@ -386,7 +383,7 @@ async def _(event):
                 functions.stickers.CreateStickerSetRequest(
                     user_id=OWNER_ID,
                     title=pname,
-                    short_name=f"ice_{un_}_V{pack}_by_{bot_un}",
+                    short_name=f"man_{un_}_V{pack}_by_{bot_un}",
                     stickers=stcrs,
                 )
             )

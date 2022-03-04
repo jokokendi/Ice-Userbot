@@ -1,4 +1,11 @@
-# ReCode by @mrismanaziz
+# Ultroid - UserBot
+# Copyright (C) 2021-2022 TeamUltroid
+#
+# This file is a part of < https://github.com/TeamUltroid/Ultroid/ >
+# PLease read the GNU Affero General Public License in
+# <https://www.github.com/TeamUltroid/Ultroid/blob/main/LICENSE/>.
+#
+# Ported by @mrismanaziz
 # FROM Man-Userbot <https://github.com/mrismanaziz/Man-Userbot>
 # t.me/SharingUserbot & t.me/Lunatic0de
 
@@ -11,6 +18,8 @@ from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP
 from userbot.utils import edit_delete, edit_or_reply, ice_cmd
 from userbot.utils.misc import create_quotly
+
+from .carbon import all_col
 
 
 @ice_cmd(pattern="q( (.*)|$)")
@@ -88,4 +97,3 @@ CMD_HELP.update(
     "
     }
 )
-
