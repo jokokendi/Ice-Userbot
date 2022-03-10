@@ -126,11 +126,11 @@ async def vc_play(event):
     ):
         return await edit_or_reply(event, "**Silahkan Masukan Judul Lagu**")
     elif replied and not replied.audio and not replied.voice or not replied:
-        botman = await edit_or_reply(event, "`Searching...`")
+        botice = await edit_or_reply(event, "`Searching...`")
         query = event.text.split(maxsplit=1)[1]
         search = ytsearch(query)
         if search == 0:
-            await botman.edit(
+            await botice.edit(
                 "**Tidak Dapat Menemukan Lagu** Coba cari dengan Judul yang Lebih Spesifik"
             )
         else:
@@ -146,11 +146,11 @@ async def vc_play(event):
             format = "best[height<=?720][width<=?1280]"
             hm, ytlink = await ytdl(format, url)
             if hm == 0:
-                await botman.edit(f"`{ytlink}`")
+                await botice.edit(f"`{ytlink}`")
             elif chat_id in QUEUE:
                 pos = add_to_queue(chat_id, songname, ytlink, url, "Audio", 0)
                 caption = f"💡 **Lagu Ditambahkan Ke antrian »** `#{pos}`\n\n**🏷 Judul:** [{songname}]({url})\n**⏱ Durasi:** `{duration}`\n🎧 **Atas permintaan:** {from_user}"
-                await botman.delete()
+                await botice.delete()
                 await event.client.send_file(chat_id, thumb, caption=caption)
             else:
                 try:
@@ -163,14 +163,14 @@ async def vc_play(event):
                     )
                     add_to_queue(chat_id, songname, ytlink, url, "Audio", 0)
                     caption = f"🏷 **Judul:** [{songname}]({url})\n**⏱ Durasi:** `{duration}`\n💡 **Status:** `Sedang Memutar`\n🎧 **Atas permintaan:** {from_user}"
-                    await botman.delete()
+                    await botice.delete()
                     await event.client.send_file(chat_id, thumb, caption=caption)
                 except Exception as ep:
                     clear_queue(chat_id)
-                    await botman.edit(f"`{ep}`")
+                    await botice.edit(f"`{ep}`")
 
     else:
-        botman = await edit_or_reply(event, "📥 **Sedang Mendownload**")
+        botice = await edit_or_reply(event, "📥 **Sedang Mendownload**")
         dl = await replied.download_media()
         link = f"https://t.me/c/{chat.id}/{event.reply_to_msg_id}"
         if replied.audio:
@@ -181,7 +181,7 @@ async def vc_play(event):
             pos = add_to_queue(chat_id, songname, dl, link, "Audio", 0)
             caption = f"💡 **Lagu Ditambahkan Ke antrian »** `#{pos}`\n\n**🏷 Judul:** [{songname}]({link})\n**👥 Chat ID:** `{chat_id}`\n🎧 **Atas permintaan:** {from_user}"
             await event.client.send_file(chat_id, ngantri, caption=caption)
-            await botman.delete()
+            await botice.delete()
         else:
             try:
                 await call_py.join_group_call(
@@ -194,10 +194,10 @@ async def vc_play(event):
                 add_to_queue(chat_id, songname, dl, link, "Audio", 0)
                 caption = f"🏷 **Judul:** [{songname}]({link})\n**👥 Chat ID:** `{chat_id}`\n💡 **Status:** `Sedang Memutar Lagu`\n🎧 **Atas permintaan:** {from_user}"
                 await event.client.send_file(chat_id, fotoplay, caption=caption)
-                await botman.delete()
+                await botice.delete()
             except Exception as ep:
                 clear_queue(chat_id)
-                await botman.edit(f"`{ep}`")
+                await botice.edit(f"`{ep}`")
 
 
 @ice_cmd(pattern="vplay(?:\s|$)([\s\S]*)")

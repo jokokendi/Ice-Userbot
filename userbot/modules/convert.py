@@ -21,9 +21,9 @@ from userbot.utils import edit_delete, edit_or_reply, ice_cmd, runcmd
 
 @ice_cmd(pattern="convert ?(foto|audio|gif|voice|photo|mp3)? ?(.*)")
 async def cevir(event):
-    botman = event.pattern_match.group(1)
+    botice = event.pattern_match.group(1)
     try:
-        if len(botman) < 1:
+        if len(botice) < 1:
             await edit_delete(
                 event,
                 "**Perintah tidak diketahui! ketik** `.help convert` **bila butuh bantuan**",
@@ -37,7 +37,7 @@ async def cevir(event):
             30,
         )
         return
-    if botman in ["foto", "photo"]:
+    if botice in ["foto", "photo"]:
         rep_msg = await event.get_reply_message()
         if not event.is_reply or not rep_msg.sticker:
             await edit_delete(event, "**Harap balas ke stiker.**")
@@ -54,7 +54,7 @@ async def cevir(event):
         )
         await xxnx.delete()
         os.remove("sticker.png")
-    elif botman in ["sound", "audio"]:
+    elif botice in ["sound", "audio"]:
         EFEKTLER = ["bengek", "robot", "jedug", "fast", "echo"]
         efekt = event.pattern_match.group(2)
         if len(efekt) < 1:
@@ -93,7 +93,7 @@ async def cevir(event):
             await xxx.edit(
                 "**Efek yang Anda tentukan tidak ditemukan!**\n**Efek yang dapat Anda gunakan:** bengek/robot/jedug/fast/echo`"
             )
-    elif botman == "mp3":
+    elif botice == "mp3":
         rep_msg = await event.get_reply_message()
         if not event.is_reply or not rep_msg.video:
             return await edit_delete(event, "**Harap balas ke Video!**")

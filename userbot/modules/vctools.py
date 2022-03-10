@@ -76,8 +76,8 @@ async def _(c):
     async for x in c.client.iter_participants(c.chat_id):
         if not x.bot:
             users.append(x.id)
-    botman = list(user_list(users, 6))
-    for p in botman:
+    botice = list(user_list(users, 6))
+    for p in botice:
         try:
             await c.client(invitetovc(call=await get_call(c), users=p))
             z += 6
