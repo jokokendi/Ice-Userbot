@@ -192,7 +192,7 @@ async def autopilot():
               os.remove("channelphoto.jpg")
           else:
               os.remove(pfpa)
-      heroku_var["BOTLOG_CHATID"] = chat_id
+      heroku_var["BOTLOG_CHATID"] = "-100" + str(chat_id)
 
 def load_module(shortname):
     if shortname.startswith("__"):
