@@ -340,8 +340,7 @@ async def _(event):
     if reply.media and reply.media.document.mime_type == "image/webp":
         tikel_id = reply.media.document.attributes[1].stickerset.id
         tikel_hash = reply.media.document.attributes[1].stickerset.access_hash
-        got_stcr = await event.client(
-            functions.messages.GetStickerSetRequest(
+        got_stcr = await event.client(GetStickerSetRequest(
                 stickerset=types.InputStickerSetID(id=tikel_id, access_hash=tikel_hash),
                 hash=0,
             )
