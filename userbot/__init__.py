@@ -19,7 +19,7 @@ from logging import DEBUG, INFO, basicConfig, getLogger
 from math import ceil
 from pathlib import Path
 from sys import version_info
-
+from userbot.utils import autopilot
 from dotenv import load_dotenv
 from git import Repo
 from pylast import LastFMNetwork, md5
@@ -297,10 +297,7 @@ except Exception as e:
 
 async def check_botlog_chatid() -> None:
     if not BOTLOG_CHATID:
-        LOGS.warning(
-            "var BOTLOG_CHATID kamu belum di isi. Buatlah grup telegram dan masukan bot @MissRose_bot lalu ketik /id Masukan id grup nya di var BOTLOG_CHATID"
-        )
-        sys.exit(1)
+        bot.loop.run_until_complete(autopilot())
 
 
 async def update_restart_msg(chat_id, msg_id):
