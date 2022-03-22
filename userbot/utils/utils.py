@@ -28,8 +28,6 @@ from telethon.tl.types import (
     InputChatUploadedPhoto,
     InputMessagesFilterDocument,
 )
-from urllib.request import urlretrieve
-
 import heroku3
 from telethon.tl.functions.contacts import UnblockRequest
 
