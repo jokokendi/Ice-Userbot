@@ -342,7 +342,6 @@ async def _(event):
         tikel_hash = reply.media.document.attributes[1].stickerset.access_hash
         got_stcr = await event.client(GetStickerSetRequest(
                 stickerset=types.InputStickerSetID(id=tikel_id, access_hash=tikel_hash),
-                hash=0,
             )
         )
         stcrs = []
