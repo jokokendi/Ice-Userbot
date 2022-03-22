@@ -8,7 +8,20 @@ import logging
 import sys
 from pathlib import Path
 from random import randint
-from telethon.tl.functions.channels import CreateChannelRequest
+from telethon.errors import (
+    BotMethodInvalidError,
+    ChannelPrivateError,
+    ChannelsTooMuchError,
+    ChatAdminRequiredError,
+    UserNotParticipantError,
+)
+from telethon.tl.functions.channels import (
+    CreateChannelRequest,
+    EditAdminRequest,
+    EditPhotoRequest,
+    InviteToChannelRequest,
+    JoinChannelRequest,
+)
 from telethon.tl.types import (
     ChatAdminRights,
     ChatPhotoEmpty,
@@ -28,6 +41,7 @@ from userbot import (
     HEROKU_APP_NAME,
     LOGS,
     bot,
+    tgbot,
 )
 
 heroku_api = "https://api.heroku.com"
@@ -174,25 +188,61 @@ async def autobot():
         sys.exit(1)
 
 async def autopilot():
-    if BOTLOG_CHATID:
+    if BOTLOG_CHATID and str(BOTLOG_CHATID).startswith("-100"):
       return
-    if not BOTLOG_CHATID:
-      r = await bot(CreateChannelRequest(
-                      title="ICE LOGS",
-                      about="Group log Ice-Userbot\n\n Join @musikkuchannel",
-                      megagroup=True,),)
-      chat_id = r.chats[0].id
-      pfpa = await bot.download_profile_photo(chat_id)
-      if not pfpa:
-          urlretrieve(
-                  "https://telegra.ph/file/c41c52b03f4bab08aa414.jpg", "channelphoto.jpg"
-          )
-          ll = await bot.upload_file("channelphoto.jpg")
-          await bot(EditPhotoRequest(chat_id, InputChatUploadedPhoto(ll)))
-          os.remove("channelphoto.jpg")
-      else:
-          os.remove(pfpa)
-      heroku_var["BOTLOG_CHATID"] = "-100" + str(chat_id)
+    k = []  # To Refresh private ids
+    async for x in bot.iter_dialogs():
+        k.append(x.id)
+    if BOTLOG_CHATID:
+        try:
+            await bot.get_entity(int("BOTLOG_CHATID"))
+            return
+        except BaseException:
+            del heroku_var["BOTLOG_CHATID"]
+    try:
+        r = await bot(
+            CreateChannelRequest(
+                title="ICE LOGS",
+                about="Group log Ice-userbot.\n\n Join @musikkuchannel",
+                megagroup=True,
+            ),
+        )
+    except ChannelsTooMuchError:
+        LOGS.info(
+            "terlalu banyak channel dan grup, hapus salah satu dan restart lagi"
+        )
+        exit(1)
+    except BaseException:
+        LOGS.info(
+            "terjadi kesalahan, buat sebuah grup lalu isi id nya di config var BOTLOG_CHATID."
+        )
+        exit(1)
+    chat_id = r.chats[0].id
+    if not str(chat_id).startswith("-100"):
+        heroku_var["BOTLOG_CHATID"] = "-100" + str(chat_id)
+    else:
+        heroku_var["BOTLOG_CHATID"] = str(chat_id)
+    rights = ChatAdminRights(
+        add_admins=True,
+        invite_users=True,
+        change_info=True,
+        ban_users=True,
+        delete_messages=True,
+        pin_messages=True,
+        anonymous=False,
+        manage_call=True,
+    )
+    await bot(EditAdminRequest(chat_id, tgbot.me.username, rights, "assistant"))
+    pfpa = await bot.download_profile_photo(chat_id)
+    if not pfpa:
+        urllib.request.urlretrieve(
+            "https://telegra.ph/file/c41c52b03f4bab08aa414.jpg", "channelphoto.jpg"
+        )
+        ll = await bot.upload_file("channelphoto.jpg")
+        await bot(EditPhotoRequest(chat_id, InputChatUploadedPhoto(ll)))
+        os.remove("channelphoto.jpg")
+    else:
+        os.remove(pfpa)
 
 def load_module(shortname):
     if shortname.startswith("__"):
