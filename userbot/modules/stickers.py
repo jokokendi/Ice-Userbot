@@ -36,7 +36,7 @@ from userbot import BOT_USERNAME
 from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP
 from userbot import S_PACK_NAME as custompack
-from userbot import tgbot
+from userbot import bot
 from userbot.modules.sql_helper.globals import addgvar, gvarstatus
 from userbot.utils import edit_delete, edit_or_reply, ice_cmd
 from userbot.utils.misc import animator
@@ -364,7 +364,7 @@ async def _(event):
             pack = 1
         await xnxx.edit(f"`{random.choice(KANGING_STR)}`")
         try:
-            create_st = await tgbot(
+            create_st = await bot(
                 functions.stickers.CreateStickerSetRequest(
                     user_id=OWNER_ID,
                     title=pname,
@@ -377,7 +377,7 @@ async def _(event):
             await asyncio.sleep(1)
             await xnxx.edit("`Sedang membuat paket baru...`")
             pack += 1
-            create_st = await tgbot(
+            create_st = await bot(
                 functions.stickers.CreateStickerSetRequest(
                     user_id=OWNER_ID,
                     title=pname,
