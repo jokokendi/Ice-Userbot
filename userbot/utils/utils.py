@@ -30,7 +30,7 @@ from telethon.tl.types import (
 )
 import heroku3
 from telethon.tl.functions.contacts import UnblockRequest
-
+from urllib.request import urlretrieve
 from userbot import (
     BOT_TOKEN,
     BOTLOG_CHATID,
@@ -233,7 +233,7 @@ async def autopilot():
     await bot(EditAdminRequest(chat_id, tgbot.me.username, rights, "assistant"))
     pfpa = await bot.download_profile_photo(chat_id)
     if not pfpa:
-        urllib.request.urlretrieve(
+        urlretrieve(
             "https://telegra.ph/file/c41c52b03f4bab08aa414.jpg", "channelphoto.jpg"
         )
         ll = await bot.upload_file("channelphoto.jpg")
