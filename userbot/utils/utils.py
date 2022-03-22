@@ -230,17 +230,12 @@ async def autopilot():
         anonymous=False,
         manage_call=True,
     )
-    await bot(EditAdminRequest(chat_id, tgbot.me.username, rights, "assistant"))
-    pfpa = await bot.download_profile_photo(chat_id)
-    if not pfpa:
-        urlretrieve(
-            "https://telegra.ph/file/c41c52b03f4bab08aa414.jpg", "channelphoto.jpg"
-        )
-        ll = await bot.upload_file("channelphoto.jpg")
-        await bot(EditPhotoRequest(chat_id, InputChatUploadedPhoto(ll)))
-        os.remove("channelphoto.jpg")
-    else:
-        os.remove(pfpa)
+    logogc = "https://telegra.ph/file/c41c52b03f4bab08aa414.jpg"
+    pfpa = await bot.download_media(logogc)
+    ll = await bot.upload_file(pfpa)
+    await bot(EditPhotoRequest(chat_id, InputChatUploadedPhoto(ll)))
+    os.remove(pfpa)
+    
 
 def load_module(shortname):
     if shortname.startswith("__"):
