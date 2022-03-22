@@ -230,11 +230,6 @@ async def autopilot():
         anonymous=False,
         manage_call=True,
     )
-    logogc = "https://telegra.ph/file/c41c52b03f4bab08aa414.jpg"
-    pfpa = await bot.download_media(logogc)
-    ll = await bot.upload_file(pfpa)
-    await bot(EditPhotoRequest(chat_id, InputChatUploadedPhoto(ll)))
-    os.remove(pfpa)
     
 
 def load_module(shortname):
