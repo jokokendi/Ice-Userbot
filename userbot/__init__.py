@@ -19,7 +19,7 @@ from logging import DEBUG, INFO, basicConfig, getLogger
 from math import ceil
 from pathlib import Path
 from sys import version_info
-from userbot.utils import autopilot
+
 from dotenv import load_dotenv
 from git import Repo
 from pylast import LastFMNetwork, md5
@@ -293,11 +293,6 @@ try:
 except Exception as e:
     print(f"STRING_SESSION - {e}")
     sys.exit()
-
-
-async def check_botlog_chatid() -> None:
-    if not BOTLOG_CHATID:
-        bot.loop.run_until_complete(autopilot())
 
 
 async def update_restart_msg(chat_id, msg_id):
@@ -652,8 +647,4 @@ with bot:
             "Untuk Mengaktifkannya Buat bot di @BotFather Lalu Tambahkan var BOT_TOKEN dan BOT_USERNAME. "
             "Pergi Ke @BotFather lalu settings bot » Pilih mode inline » Turn On. "
         )
-    try:
-        bot.loop.run_until_complete(check_botlog_chatid())
-    except BaseException as e:
-        LOGS.exception(f"[BOTLOG] - {e}")
-        sys.exit(1)
+    
