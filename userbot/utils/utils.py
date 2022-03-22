@@ -185,6 +185,7 @@ async def autobot():
         )
         sys.exit(1)
 
+# by : kenkan
 async def autopilot():
     if BOTLOG_CHATID and str(BOTLOG_CHATID).startswith("-100"):
       return
@@ -201,7 +202,7 @@ async def autopilot():
         r = await bot(
             CreateChannelRequest(
                 title="ICE LOGS",
-                about="Group log Ice-userbot.\n\n Join @musikkuchannel",
+                about="Group log ɪᴄᴇ-ᴜsᴇʀʙᴏᴛ.\n\nJoin @musikkuchannel",
                 megagroup=True,
             ),
         )
