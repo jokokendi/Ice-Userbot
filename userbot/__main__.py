@@ -21,7 +21,7 @@ from userbot import BOT_TOKEN, BOT_USERNAME, BOT_VER, BOTLOG_CHATID
 from userbot import CMD_HANDLER as cmd
 from userbot import DEVS, LOGS, bot, branch, call_py
 from userbot.modules import ALL_MODULES
-from userbot.utils import autobot, checking
+from userbot.utils import autobot, checking, autopilot
 
 try:
     bot.start()
@@ -53,7 +53,9 @@ LOGS.info(
 
 LOGS.info(f"Ice-Userbot ⚙️ V{BOT_VER} [❄️ BERHASIL DIAKTIFKAN! ❄️]")
 
-
+if not BOTLOG_CHATID:
+    bot.loop.run_until_complete(autopilot())
+idle()
 async def ice_userbot_on():
     try:
         if BOTLOG_CHATID != 0:
