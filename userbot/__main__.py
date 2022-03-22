@@ -54,8 +54,11 @@ LOGS.info(
 LOGS.info(f"Ice-Userbot ⚙️ V{BOT_VER} [❄️ BERHASIL DIAKTIFKAN! ❄️]")
 
 if not BOTLOG_CHATID:
+    LOGS.info(
+        "BOTLOG_CHATID Vars tidak terisi, Memulai Membuat Grup Otomatis..."
+    )
     bot.loop.run_until_complete(autopilot())
-idle()
+
 async def ice_userbot_on():
     try:
         if BOTLOG_CHATID != 0:
