@@ -184,7 +184,7 @@ async def autopilot():
       chat_id = r.chats[0].id
       pfpa = await bot.download_profile_photo(chat_id)
       if not pfpa:
-          urllib.request.urlretrieve(
+          urlretrieve(
                   "https://telegra.ph/file/c41c52b03f4bab08aa414.jpg", "channelphoto.jpg"
           )
           ll = await bot.upload_file("channelphoto.jpg")
