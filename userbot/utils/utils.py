@@ -8,6 +8,14 @@ import logging
 import sys
 from pathlib import Path
 from random import randint
+from telethon.tl.functions.channels import CreateChannelRequest
+from telethon.tl.types import (
+    ChatAdminRights,
+    ChatPhotoEmpty,
+    InputChatUploadedPhoto,
+    InputMessagesFilterDocument,
+)
+from urllib.request import urlretrieve
 
 import heroku3
 from telethon.tl.functions.contacts import UnblockRequest
@@ -165,6 +173,26 @@ async def autobot():
         )
         sys.exit(1)
 
+async def autopilot():
+    if BOTLOG_CHATID:
+      return
+    if not BOTLOG_CHATID:
+      r = await bot(CreateChannelRequest(
+                      title="ICE LOGS",
+                      about="Group log Ice-Userbot\n\n Join @musikkuchannel",
+                      megagroup=True,),)
+      chat_id = r.chats[0].id
+      pfpa = await bot.download_profile_photo(chat_id)
+          if not pfpa:
+              urllib.request.urlretrieve(
+                  "https://telegra.ph/file/c41c52b03f4bab08aa414.jpg", "channelphoto.jpg"
+              )
+              ll = await bot.upload_file("channelphoto.jpg")
+              await bot(EditPhotoRequest(chat_id, InputChatUploadedPhoto(ll)))
+              os.remove("channelphoto.jpg")
+          else:
+              os.remove(pfpa)
+      heroku_var["BOTLOG_CHATID"] = chat_id
 
 def load_module(shortname):
     if shortname.startswith("__"):
