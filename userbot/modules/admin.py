@@ -433,7 +433,7 @@ async def rm_deletedacc(show):
         if del_u > 0:
             del_status = (
                 f"**Menemukan** `{del_u}` **Akun Depresi/Terhapus/Zombie Dalam Grup Ini,"
-                "\nBersihkan Itu Menggunakan Perintah** `.zombies clean`"
+                f"\nBersihkan Itu Menggunakan Perintah** `{cmd}zombies clean`"
             )
         return await show.edit(del_status)
     chat = await show.get_chat()

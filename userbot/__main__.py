@@ -7,7 +7,7 @@
 # Recode by @mrismanaziz
 # FROM Man-Userbot <https://github.com/mrismanaziz/Man-Userbot>
 # t.me/SharingUserbot & t.me/Lunatic0de
-# credit by @kenkan_ice kalau copas ya kasih credits
+# credits by @kenkan_ice kalau copas ya kasih credits
 # 
 """ Userbot start point """
 
@@ -92,7 +92,7 @@ async def ice_userbot_on():
                 anonymous=False,
                 manage_call=True,
             )
-        await bot(EditAdminRequest(int(BOTLOG_CHATID), BOT_USERNAME, rights, "Assistant"))
+        await bot(EditAdminRequest(int(BOTLOG_CHATID), BOT_USERNAME, rights, "ᴀssɪsᴛᴀɴᴛ  ɪᴄᴇ"))
         ppk = "userbot/resources/logogc.jpg"
         await bot(EditPhotoRequest(BOTLOG_CHATID, await bot.upload_file(ppk)))
     except BaseException:
