@@ -13,23 +13,8 @@
 
 import sys
 from importlib import import_module
-
-import requests
 from pytgcalls import idle
-from telethon.tl.functions.channels import InviteToChannelRequest
-from telethon.tl.functions.channels import (
-    EditAdminRequest,
-    EditBannedRequest,
-    EditPhotoRequest,
-)
-from telethon.tl.functions.users import GetFullUserRequest
-from telethon.tl.types import (
-    ChannelParticipantsAdmins,
-    ChatAdminRights,
-    ChatBannedRights,
-    InputChatPhotoEmpty,
-    MessageMediaPhoto,
-)
+import requests
 from userbot import BOT_TOKEN, BOT_USERNAME, BOT_VER, BOTLOG_CHATID
 from userbot import CMD_HANDLER as cmd
 from userbot import DEVS, LOGS, bot, branch, call_py
@@ -81,23 +66,7 @@ async def ice_userbot_on():
             )
     except Exception as e:
         LOGS.info(str(e))
-    try:
-        rights = ChatAdminRights(
-                add_admins=False,
-                invite_users=True,
-                change_info=True,
-                ban_users=True,
-                delete_messages=True,
-                pin_messages=True,
-                anonymous=False,
-                manage_call=True,
-            )
-        await bot(EditAdminRequest(int(BOTLOG_CHATID), BOT_USERNAME, rights, "ᴀssɪsᴛᴀɴᴛ  ɪᴄᴇ"))
-        ppk = "userbot/resources/logogc.jpg"
-        await bot(EditPhotoRequest(BOTLOG_CHATID, await bot.upload_file(ppk)))
-    except BaseException:
-        pass
-
+    
 
 bot.loop.run_until_complete(checking())
 bot.loop.run_until_complete(ice_userbot_on())
