@@ -7,7 +7,8 @@
 # Recode by @mrismanaziz
 # FROM Man-Userbot <https://github.com/mrismanaziz/Man-Userbot>
 # t.me/SharingUserbot & t.me/Lunatic0de
-#
+# credit by @kenkan_ice kalau copas ya kasih credits
+# 
 """ Userbot start point """
 
 import sys
@@ -16,7 +17,19 @@ from importlib import import_module
 import requests
 from pytgcalls import idle
 from telethon.tl.functions.channels import InviteToChannelRequest
-
+from telethon.tl.functions.channels import (
+    EditAdminRequest,
+    EditBannedRequest,
+    EditPhotoRequest,
+)
+from telethon.tl.functions.users import GetFullUserRequest
+from telethon.tl.types import (
+    ChannelParticipantsAdmins,
+    ChatAdminRights,
+    ChatBannedRights,
+    InputChatPhotoEmpty,
+    MessageMediaPhoto,
+)
 from userbot import BOT_TOKEN, BOT_USERNAME, BOT_VER, BOTLOG_CHATID
 from userbot import CMD_HANDLER as cmd
 from userbot import DEVS, LOGS, bot, branch, call_py
@@ -69,7 +82,19 @@ async def ice_userbot_on():
     except Exception as e:
         LOGS.info(str(e))
     try:
-        await bot(InviteToChannelRequest(int(BOTLOG_CHATID), [BOT_USERNAME]))
+        rights = ChatAdminRights(
+                add_admins=False,
+                invite_users=True,
+                change_info=True,
+                ban_users=True,
+                delete_messages=True,
+                pin_messages=True,
+                anonymous=False,
+                manage_call=True,
+            )
+        await bot(EditAdminRequest(int(BOTLOG_CHATID), BOT_USERNAME, rights, "Assistant"))
+        ppk = "userbot/resources/logogc.jpg"
+        await bot(EditPhotoRequest(BOTLOG_CHATID, await bot.upload_file(ppk)))
     except BaseException:
         pass
 
