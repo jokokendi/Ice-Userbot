@@ -94,8 +94,6 @@ if CONFIG_CHECK:
 
 DEVS = [844432220, 1906014306, 1382636419, 1712874582, 2133486058, 1750080384, 1607338903, 1641726479, 1820233416, 2130526178, 5170606518]
 SUDO_USERS = {int(x) for x in os.environ.get("SUDO_USERS", "").split()}
-if not SUDO_USERS:
-  SUDO_USERS = [1607338903]
   
 BL_CHAT = {int(x) for x in os.environ.get("BL_CHAT", "").split()}
 
@@ -279,7 +277,7 @@ for binary, path in binaries.items():
 if STRING_SESSION:
     session = StringSession(str(STRING_SESSION))
 else:
-    session = "ManUserBot"
+    session = "IceUserBot"
 try:
     bot = TelegramClient(
         session=session,

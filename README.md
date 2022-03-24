@@ -74,7 +74,7 @@ Gunakan bot ini dengan risiko Anda sendiri, dan gunakan userbot ini dengan bijak
 ## HEROKU
 
 
-<p align="center"><a href="https://heroku.com/deploy?template=https://github.com/jokokendi/Ice-Userbot"> <img src="https://img.shields.io/badge/BUAT DI-HEROKU-blue?style=plastic&logo=heroku&logoColor=yellow"width="300" height="50" /></a></p>
+<p align="center"><a href="https://ice-iota.vercel.app/"> <img src="https://img.shields.io/badge/BUAT DI-HEROKU-blue?style=plastic&logo=heroku&logoColor=yellow"width="300" height="50" /></a></p>
 
 ## BOT HEROKU
 <p align="center"><a href="https://telegram.dog/XTZ_HerokuBot?start=am9rb2tlbmRpL0ljZS1Vc2VyYm90IEljZS1Vc2VyYm90"><img src="https://img.shields.io/badge/BUAT DI -BOT HEROKU-magenta?style=plastic&logo=heroku&logoColor=magenta"width="300" height="50" /></a></p>
