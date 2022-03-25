@@ -3,27 +3,14 @@
 # KALO FORK/CLONE USERNAME YG DI ATAS  G USH DI HAPUSS YAA KONTOLL
 
 version: "3.9"
-
 services:
-
-  worker: Dockerfile
-
-    build:
-
+  worker:
     environment:
-
       STRING_SESSION: $STRING_SESSION
-
       API_KEY: $API_KEY
-      
       API_HASH: $API_HASH
-      
       BOT_TOKEN: $BOT_TOKEN
-      
       BOT_USERNAME: $BOT_USERNAME
-      
       BOTLOG_CHATID: $BOTLOG_CHATID
-      
       DATABASE_URL: $DATABASE_URL
-      
       PM_AUTO_BAN: $PM_AUTO_BAN
