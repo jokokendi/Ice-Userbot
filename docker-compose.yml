@@ -1,7 +1,8 @@
-version: "3.9"
-services:
-  worker:
-    build: .
+build: 
+  docker:
+      worker: Dockerfile
+run:
+   worker: python3 -m userbot
     environment:
       STRING_SESSION: $STRING_SESSION
       API_KEY: $API_KEY
