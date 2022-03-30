@@ -16,9 +16,12 @@ from telethon.tl.functions.phone import DiscardGroupCallRequest as stopvc
 from telethon.tl.functions.phone import EditGroupCallTitleRequest as settitle
 from telethon.tl.functions.phone import GetGroupCallRequest as getvc
 from telethon.tl.functions.phone import InviteToGroupCallRequest as invitetovc
+from pytgcalls import StreamType
+from pytgcalls.exceptions import AlreadyJoinedError
+from pytgcalls.types.input_stream import InputAudioStream, InputStream
 
 from userbot import CMD_HANDLER as cmd
-from userbot import CMD_HELP, owner, DEVS
+from userbot import CMD_HELP, owner, DEVS, call_py
 from userbot.events import register
 from userbot.utils import edit_delete, edit_or_reply, ice_cmd
 
@@ -106,6 +109,65 @@ async def change_title(e):
     except Exception as ex:
         await edit_delete(e, f"**ERROR:** `{ex}`")
 
+@ice_cmd(pattern="joinvc(?: |$)(.*)")
+@register(pattern=r"^\.joinvcs(?: |$)(.*)", sudo=True)
+async def _(event):
+    Ice = await edit_or_reply(event, "`Processing...`")
+    if len(event.text.split()) > 1:
+        chat_id = event.text.split()[1]
+        try:
+            chat_id = await event.client.get_peer_id(int(chat_id))
+        except Exception as e:
+            return await Ice.edit(f"**ERROR:** `{e}`")
+    else:
+        chat_id = event.chat_id
+    file = "./userbot/resources/audio-ice.mp3"
+    if chat_id:
+        try:
+            await call_py.join_group_call(
+                chat_id,
+                InputStream(
+                    InputAudioStream(
+                        file,
+                    ),
+                ),
+                stream_type=StreamType().local_stream,
+            )
+            await Ice.edit(
+                f"❏ **Berhasil Join Ke Obrolan Suara**\n└ **Chat ID:** `{chat_id}`"
+            )
+        except AlreadyJoinedError:
+            await call_py.leave_group_call(chat_id)
+            await edit_delete(
+                Ice,
+                "**ERROR:** `Karena akun sedang berada di obrolan suara`\n\n• Silahkan coba `.joinvc` lagi",
+                45,
+            )
+        except Exception as e:
+            await Ice.edit(f"**INFO:** `{e}`")
+
+
+@ice_cmd(pattern="leavevc(?: |$)(.*)")
+@register(pattern=r"^\.leavevcs(?: |$)(.*)", sudo=True)
+async def vc_end(event):
+    Ice = await edit_or_reply(event, "`Processing...`")
+    if len(event.text.split()) > 1:
+        chat_id = event.text.split()[1]
+        try:
+            chat_id = await event.client.get_peer_id(int(chat_id))
+        except Exception as e:
+            return await Ice.edit(f"**ERROR:** `{e}`")
+    else:
+        chat_id = event.chat_id
+    if chat_id:
+        try:
+            await call_py.leave_group_call(chat_id)
+            await edit_delete(
+                Ice,
+                f"❏ **Berhasil Turun dari Obrolan Suara**\n└ **Chat ID:** `{chat_id}`",
+            )
+        except Exception as e:
+            await Ice.edit(f"**INFO:** `{e}`")
 
 CMD_HELP.update(
     {
@@ -114,6 +176,10 @@ CMD_HELP.update(
         \n  •  **Function : **Untuk Memulai voice chat group\
         \n\n  •  **Syntax :** `{cmd}stopvc`\
         \n  •  **Function : **Untuk Memberhentikan voice chat group\
+        \n\n  •  **Syntax :** `{cmd}joinvc` atau `{cmd}joinvc` <chatid/username gc>\
+        \n  •  **Function : **Untuk Bergabung ke voice chat group\
+        \n\n  •  **Syntax :** `{cmd}leavevc` atau `{cmd}leavevc` <chatid/username gc>\
+        \n  •  **Function : **Untuk Turun dari voice chat group\
         \n\n  •  **Syntax :** `{cmd}vctitle` <title vcg>\
         \n  •  **Function : **Untuk Mengubah title/judul voice chat group\
         \n\n  •  **Syntax :** `{cmd}vcinvite`\
@@ -121,3 +187,7 @@ CMD_HELP.update(
     "
     }
 )
+
+       
+       
+        
