@@ -18,7 +18,6 @@ from userbot import CMD_HELP, COUNT_PM, LASTMSG, LOGS, PM_AUTO_BAN, PM_LIMIT, bo
 from userbot.events import ice_cmd, register
 from userbot.utils import edit_delete, edit_or_reply
 
-DEV_PM_PHOTO = "userbot/resources/logo.jpg"
 DEF_UNAPPROVED_MSG = (
     "╔════════════════════╗\n"
     "     ⛑ 𝗔𝗧𝗧𝗘𝗡𝗧𝗜𝗢𝗡 𝗣𝗟𝗘𝗔𝗦𝗘 ⛑\n"
@@ -61,19 +60,19 @@ async def permitpm(event):
         # This part basically is a sanity check
         # If the message that sent before is Unapproved Message
         # then stop sending it again to prevent FloodHit
-        if not apprv and event.file != UNAPPROVED_MSG:
+        if not apprv and event.text != UNAPPROVED_MSG:
             if event.chat_id in LASTMSG:
                 prevmsg = LASTMSG[event.chat_id]
                 # If the message doesn't same as previous one
                 # Send the Unapproved Message again
-                if event.file != prevmsg:
+                if event.text != prevmsg:
                     async for message in event.client.iter_messages(
-                        event.chat_id, from_user="me", caption=UNAPPROVED_MSG, file=DEV_PM_PHOTO
+                        event.chat_id, from_user="me", search=UNAPPROVED_MSG
                     ):
                         await message.delete()
-                    await event.reply(caption=f"{UNAPPROVED_MSG}", file=DEV_PM_PHOTO)
+                    await event.reply(f"{UNAPPROVED_MSG}")
             else:
-                await event.reply(caption=f"{UNAPPROVED_MSG}", file=DEV_PM_PHOTO)
+                await event.reply(f"{UNAPPROVED_MSG}")
             LASTMSG.update({event.chat_id: event.text})
             if notifsoff:
                 await event.client.send_read_acknowledge(event.chat_id)
