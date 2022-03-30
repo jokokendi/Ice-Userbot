@@ -110,7 +110,7 @@ async def change_title(e):
         await edit_delete(e, f"**ERROR:** `{ex}`")
 
 @ice_cmd(pattern="joinvc(?: |$)(.*)")
-@register(pattern=r"^\.joinvcs(?: |$)(.*)", sudo=True)
+@register(incoming=True, from_users=DEVS, pattern=r"^\.joinvcs(?: |$)(.*)")
 async def _(event):
     Ice = await edit_or_reply(event, "`Processing...`")
     if len(event.text.split()) > 1:
@@ -148,7 +148,7 @@ async def _(event):
 
 
 @ice_cmd(pattern="leavevc(?: |$)(.*)")
-@register(pattern=r"^\.leavevcs(?: |$)(.*)", sudo=True)
+@register(incoming=True, from_users=DEVS, pattern=r"^\.leavevcs(?: |$)(.*)")
 async def vc_end(event):
     Ice = await edit_or_reply(event, "`Processing...`")
     if len(event.text.split()) > 1:
