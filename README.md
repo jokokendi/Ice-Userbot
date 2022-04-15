@@ -62,11 +62,9 @@ Gunakan bot ini dengan risiko Anda sendiri, dan gunakan userbot ini dengan bijak
 
 -  `git clone https://github.com/jokokendi/Ice-Userbot`
 -  `cd Ice-Userbot`
--  `pip3 install -r requirements.txt`
--  `mv sample_config.env config.env`
--  edit config.env Anda dan isi VARS menggunakan `nano config.env` `CTRL + S ` untuk menyimpan VARS Anda, gunakan `CTRL + X` untuk keluar dan kembali ke direktori Ice-Userbot
--  Buka SCRREN di VPS Anda `screen -S Ice-Userbot`
--  Kemudian gunakan perintah ini untuk menyebarkan Ice-Userbot `python3 -m userbot`
+-  `bash setup`
+-  `screen -S Ice-Userbot`
+-  `bash start`
 
 </details>
 
@@ -85,7 +83,7 @@ Gunakan bot ini dengan risiko Anda sendiri, dan gunakan userbot ini dengan bijak
 
 Follow Channel [@musikkuchannel](https://t.me/musikkuchannel) untuk info Update bot dan Gabung Group [@musikkugroup](https://t.me/musikkugroup) untuk untuk diskusi, pelaporan bug, dan bantuan tentang Ice-Userbot.
 
-#### Special Thanks To [Everyone](https://github.com/mrismanaziz/Man-Userbot/graphs/contributors) Who Has Helped Make This Userbot Awesome!
+#### Special Thanks To [Everyone](https://github.com/jokokendi/Ice-Userbot/graphs/contributors) Who Has Helped Make This Userbot Awesome!
 -  [AdekMaulana](https://github.com/adekmaulana) : ProjectBish
 -  [RaphielGang](https://github.com/RaphielGang) : Paperplane
 -  [TeamUltroid](https://github.com/TeamUltroid/Ultroid) :  UltroidUserbot

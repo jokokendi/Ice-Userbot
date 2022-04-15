@@ -1,0 +1,138 @@
+#!/bin/bash
+# coder @TheYukki
+# kanger Ice-Userbot Installer
+
+pprint (){
+	cred='\033[0;31m'
+	cgreen='\033[0;32m'
+	cyellow='\033[0;33m'
+	cblue='\033[0;34m'
+	cpurple='\033[0;35m'
+	eval "export color='$cpurple'"
+	[ ! -z $2 ] && eval "export color=\"\$$2\""
+    printf "$color $1"
+}
+
+color_reset(){ printf '\033[0;37m';}
+
+yesnoprompt(){
+	old_stty_cfg=$(stty -g)
+	stty raw -echo ; answer=$(head -c 1)
+	stty $old_stty_cfg
+	echo "$answer" | grep -iq "^y"
+}
+
+update() {
+	pprint "\n\nUpdating package list.. "
+	sudo apt update 2>&1 | grep "can be upgraded" &>/dev/null
+	if [ $? -eq 0 ]; then
+		pprint "UPDATE AVAILABLE" "cgreen"
+		pprint "\n\nApakah kamu yakin update otomatis (y/n)?"
+		if yesnoprompt; then
+			pprint "\n\nUpgrading packages.. "
+			sudo apt upgrade -y &>/dev/null &&
+			pprint "DONE!\n\n" "cgreen" || (pprint "FAIL.\n\n" "cred"; exit 1)
+		else
+			echo
+		fi
+	else
+		pprint "ALREADY UP TO DATE\n\n" "cgreen"
+	fi
+}
+
+packages(){
+	if ! command -v pip &>/dev/null; then
+		pprint "Couldn't found pip, installing now.. "
+		sudo apt install python3-pip -y 2>pypilog.txt 1>/dev/null &&
+		pprint "SUCCESS.\n\n" "cgreen" || (pprint "FAIL.\n\n" "cred"; exit 1)
+	fi
+
+	if ! command -v ffmpeg &>/dev/null; then
+		pprint "Couldn't found ffmpeg, installing now.. "
+		if sudo apt install ffmpeg -y &>/dev/null;then
+			pprint "SUCCESS.\n\n" "cgreen"
+		else
+			pprint "FAIL.\n\n" "cred"
+			pprint "You need to install ffmpeg manually in order to use Ice-Userbot, exiting..\n" "cblue"
+			exit 1
+		fi
+	fi
+
+	# Check ffmpeg version and warn user if necessary.
+	fv=$(grep -Po 'version (3.*?) ' <<< $(ffmpeg -version)) &&
+	pprint "Playing live streams not going to work since you have ffmpeg $fv, live streams are supported by version 4+.\n" "cblue"
+}
+
+
+node(){
+	command -v npm &>/dev/null && return
+	pprint "Installing Nodejs Google Chrome dan Npm..  "
+	curl -fssL https://deb.nodesource.com/setup_17.x | sudo -E bash - &>nodelog.txt &&
+	apt install tree wget2 p7zip-full jq ffmpeg wget git -y &&
+	wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb lalu ketik sudo apt install ./google-chrome-stable_current_amd64.deb &&
+	sudo apt install nodejs -y &>>nodelog.txt &&
+	sudo npm i -g npm &>>nodelog.txt &&
+	pprint "SUCCESS!\n" "cgreen" || (pprint "FAIL.\n" "cred"; exit 1)
+}
+
+
+repo(){
+	# Get git repo if the installer is runned standalone
+	[[ ! "Ice-Userbot" == $(basename -s .git `git config --get remote.origin.url`) ]] &&
+	git clone https: //github.com/jokokendi/Ice-Userbot &&  cd Ice-Userbot
+}
+
+
+installation(){
+	pprint "\n\nUpgrading pip and installing dependency packages.. "
+	pip3 install -U pip &>>pypilog.txt &&
+	pip3 install -U -r requirements.txt &>>pypilog.txt &&
+	pprint "DONE.\n" "cgreen" && return
+	pprint "FAIL.\n" "cred"
+	exit 1
+}
+
+clear
+pprint "Selamat datang di Penginstal Ice-Userbot\n\n"
+pprint "Jika Anda melihat kesalahan selama Proses Instalasi, Silakan merujuk ke file-file ini untuk log:"
+pprint "\nUntuk kesalahan node js , Periksa nodelog.txt"
+pprint "\nUntuk kesalahan paket pypi, Periksa pypilog.txt"
+sleep 2
+pprint "\n\nScript needs sudo privileges in order to update & install packages.\n"
+sudo test
+
+update
+packages
+node
+repo
+installation
+pprint "\n\n\n\n\nIce-Userbot Installation selesai!" "cgreen"
+sleep 4
+clear
+
+pprint "\nMasukkan Valuenya\n\n\n"
+pprint "API KEY: "; color_reset; read api_id
+pprint "\nAPI HASH: "; color_reset; read api_hash
+pprint "\nBOT TOKEN: "; color_reset; read bot_token
+pprint "\nBOT USERNAME: "; color_reset; read botuser
+pprint "\nDATA BASE URL: "; color_reset; read data_base
+pprint "\nBOTLOG CHATID: "; color_reset; read logger
+pprint "\nPM AUTO BAN: "; color_reset; read pmpermit
+pprint "\nSTRING_SESSION TELETHON: "; color_reset; read string_session
+
+pprint "\n\nMemproses vars Anda, Tunggu sebentar!" "cgreen"
+
+if [ -f config.env ]; then
+	rm sample_config.env
+fi
+
+echo """API_KEY = $api_id
+API_HASH = $api_hash
+BOT_TOKEN = $bot_token
+BOT_USERNAME = $botuser
+DATABASE_URL = $data_base
+BOTLOG_CHATID = $logger
+PM_AUTO_BAN = $pmpermit
+STRING_SESSION = $string_session""" > config.env
+clear
+pprint "\n\n\nVars Anda telah berhasil disimpan!, Terima kasih telah menggunakan Musikku Installer, sekarang Anda dapat melanjutkan dengan memulai bot dengan bash start!"
