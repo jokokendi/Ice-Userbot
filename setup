@@ -70,7 +70,7 @@ node(){
 	curl -fssL https://deb.nodesource.com/setup_17.x | sudo -E bash - &>nodelog.txt &&
 	apt install tree wget2 p7zip-full jq ffmpeg wget git -y &&
 	wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb &&
-    sudo apt install ./google-chrome-stable_current_amd64.deb &&
+    	sudo apt install ./google-chrome-stable_current_amd64.deb &&
 	sudo apt install nodejs -y &>>nodelog.txt &&
 	sudo npm i -g npm &>>nodelog.txt &&
 	pprint "SUCCESS!\n" "cgreen" || (pprint "FAIL.\n" "cred"; exit 1)
