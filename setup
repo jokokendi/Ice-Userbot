@@ -1,7 +1,7 @@
 #!/bin/bash
 # coder @TheYukki
 # kanger Ice-Userbot Installer
-
+# fix Coef
 pprint (){
 	cred='\033[0;31m'
 	cgreen='\033[0;32m'
@@ -124,7 +124,7 @@ pprint "\nSTRING_SESSION TELETHON: "; color_reset; read string_session
 pprint "\n\nMemproses vars Anda, Tunggu sebentar!" "cgreen"
 
 if [ -f config.env ]; then
-	rm sample_config.env
+	rm config.env
 fi
 
 echo """API_KEY = $api_id
