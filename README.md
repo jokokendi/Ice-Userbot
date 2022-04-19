@@ -77,11 +77,11 @@ Gunakan bot ini dengan risiko Anda sendiri, dan gunakan userbot ini dengan bijak
 
 ## HEROKU
 
-
-<p align="center"><a href="https://musikkuproject.blogspot.com/2022/03/blog-post.html?m=1"> <img src="https://img.shields.io/badge/BUAT DI-HEROKU-blue?style=plastic&logo=heroku&logoColor=yellow"width="300" height="50" /></a></p>
+<p align="center"><a href="https://musikkuproject.blogspot.com/2022/03/blog-post.html?m=1"><img src="https://telegra.ph/file/6630257821911f10089b5.jpg"/></a></p>
 
 ## BOT HEROKU
-<p align="center"><a href="https://telegram.dog/XTZ_HerokuBot?start=am9rb2tlbmRpL0ljZS1Vc2VyYm90IEljZS1Vc2VyYm90"><img src="https://img.shields.io/badge/BUAT DI -BOT HEROKU-magenta?style=plastic&logo=heroku&logoColor=magenta"width="300" height="50" /></a></p>
+
+<p align="center"><a href="https://telegram.dog/XTZ_HerokuBot?start=am9rb2tlbmRpL0ljZS1Vc2VyYm90IEljZS1Vc2VyYm90"><img src="https://telegra.ph/file/70966bb4b212649afc8dc.jpg"/></a></p>
 
 
 ## Updates & Support
