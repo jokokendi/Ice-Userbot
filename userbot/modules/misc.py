@@ -133,7 +133,7 @@ async def repo_is_here(event):
 async def string_is_here(event):
     await edit_or_reply(
         event,
-        "✥ **GET STRING SESSION TELEGRAM :** [KLIK DISINI](https://repl.it/@mrismanaziz/stringenSession?lite=1&outputonly=1)\n",
+        "✥ **GET STRING SESSION TELEGRAM**\n\n┏━━━━━━━━━━━━━━━━━━━━━\n┣ ☞ [ᴠɪᴀ ʀᴇᴘʟɪᴛ](http://replit.com/@kenkannih/strings#main.py)\n┣ ☞ [ᴠɪᴀ ʙᴏᴛ](http://t.me/stringdurhakabot)\n┗━━━━━━━━━━━━━━━━━━━━━"
     )
 
 
