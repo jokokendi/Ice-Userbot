@@ -1,4 +1,6 @@
-# Ice-Userbot Telegram
+<p align="center"><img src="https://i0.wp.com/images.hive.blog/DQmZgGvu6YXrMNyDb4wVURLV14WNNSYs58R1kY64HNMSmCL/hive-didver1.gif"></p>
+<h2 align="center">Ice-Userbot Telegram</h2>
+<p align="center"><img src="https://i0.wp.com/images.hive.blog/DQmZgGvu6YXrMNyDb4wVURLV14WNNSYs58R1kY64HNMSmCL/hive-didver1.gif"></p>
 
 <p align="center"><a href="https://github.com/jokokendi/Ice-Userbot"> <img src="userbot/resources/logo.jpg"/></a></p>
 
