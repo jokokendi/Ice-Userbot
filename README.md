@@ -79,7 +79,7 @@ Gunakan bot ini dengan risiko Anda sendiri, dan gunakan userbot ini dengan bijak
 
 ## HEROKU
 
-<p align="center"><a href="https://musikkuproject.blogspot.com/2022/03/blog-post.html?m=1"><img src="https://telegra.ph/file/6630257821911f10089b5.jpg"/></a></p>
+<p align="center"><a href="https://ice-iota-kohl.vercel.app"><img src="https://telegra.ph/file/6630257821911f10089b5.jpg"/></a></p>
 
 ## BOT HEROKU
 
