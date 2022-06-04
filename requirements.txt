@@ -72,7 +72,7 @@ speedtest-cli
 sqlalchemy-json
 sqlalchemy==1.3.23
 telegraph
-Telethon==1.24.0
+Telethon==1.23.0
 telethon-session-sqlalchemy
 telethon-tgcrypto
 urbandict
